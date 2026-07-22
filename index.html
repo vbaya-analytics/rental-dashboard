@@ -95,10 +95,31 @@ tr.weak{background:#fdfaf3}
 #gate .note{font-size:12px;color:#94a3b0;text-align:center;margin-top:18px;line-height:1.5}
 body.locked{overflow:hidden}
 #appShell{display:none}
+
+/* ---------- LOGOUT / USER BAR ---------- */
 #logoutBar{display:none;justify-content:flex-end;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
 #logoutBar .who{font-size:12px;color:#5a6b7b}
 #logoutBar button{background:#fff;border:1px solid #e2e8ee;color:#0f2942;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
 #logoutBar button:hover{background:#f4f6f9}
+
+/* ---------- CHANGE PASSWORD MODAL ---------- */
+#cpModal{display:none;position:fixed;inset:0;background:rgba(10,25,45,.6);z-index:8888;align-items:center;justify-content:center;padding:24px}
+#cpModal.open{display:flex}
+#cpModal .card{background:#fff;border-radius:16px;padding:32px 36px;max-width:400px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+#cpModal h2{font-size:19px;font-weight:800;color:#0f2942;margin-bottom:6px}
+#cpModal p{font-size:13px;color:#5a6b7b;margin-bottom:18px}
+#cpModal label{display:block;font-size:11px;font-weight:700;color:#5a6b7b;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 5px}
+#cpModal input{width:100%;box-sizing:border-box;padding:11px 13px;border:1px solid #d8e0e8;border-radius:9px;font-size:14px;font-family:inherit;color:#1a2530}
+#cpModal input:focus{outline:none;border-color:#0f2942}
+#cpModal .actions{display:flex;gap:10px;margin-top:20px}
+#cpModal button.primary{flex:1;background:#0f2942;color:#fff;border:0;border-radius:9px;padding:11px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+#cpModal button.primary:hover{background:#1c3d5a}
+#cpModal button.primary:disabled{opacity:.6;cursor:default}
+#cpModal button.cancel{flex:1;background:#fff;color:#5a6b7b;border:1px solid #e2e8ee;border-radius:9px;padding:11px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+#cpModal button.cancel:hover{background:#f4f6f9}
+#cpModal .msg{display:none;font-size:13px;padding:10px 13px;border-radius:8px;margin-top:12px;line-height:1.5}
+#cpModal .msg.info{display:block;background:#e6f2ec;color:#2e7d5b;border:1px solid #bfe3d0}
+#cpModal .msg.warn{display:block;background:#fbeee9;color:#c25a3a;border:1px solid #f0cdc0}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -118,24 +139,16 @@ body.locked{overflow:hidden}
       <label>Password</label>
       <input id="loginPass" type="password" autocomplete="current-password" placeholder="Your password">
       <button class="primary" id="loginBtn" onclick="doLogin()">Log in</button>
-      <button class="link" onclick="showReset()">Forgot / set your password?</button>
+      <button class="link" onclick="showReset()">Forgot your password?</button>
     </div>
 
     <!-- RESET-REQUEST VIEW -->
     <div id="viewReset" style="display:none">
-      <div class="sub">Enter your email and we&rsquo;ll send you a link to set a new password.</div>
+      <div class="sub">Enter your email and we'll send you a link to reset your password.</div>
       <label>Email</label>
       <input id="resetEmail" type="email" autocomplete="username" placeholder="you@example.com">
       <button class="primary" id="resetBtn" onclick="doResetRequest()">Send reset link</button>
       <button class="link" onclick="showLogin()">Back to log in</button>
-    </div>
-
-    <!-- SET-NEW-PASSWORD VIEW (after clicking email link) -->
-    <div id="viewNewPass" style="display:none">
-      <div class="sub">Choose a password for your account.</div>
-      <label>New password</label>
-      <input id="newPass" type="password" autocomplete="new-password" placeholder="At least 8 characters">
-      <button class="primary" id="newPassBtn" onclick="doSetPassword()">Set password &amp; continue</button>
     </div>
 
     <div class="msg" id="gateMsgBox"></div>
@@ -143,9 +156,28 @@ body.locked{overflow:hidden}
   </div>
 </div>
 
+<!-- ============ CHANGE PASSWORD MODAL ============ -->
+<div id="cpModal">
+  <div class="card">
+    <h2>Change password</h2>
+    <p>Enter a new password for your account.</p>
+    <label>New password</label>
+    <input id="cpPass1" type="password" autocomplete="new-password" placeholder="At least 8 characters">
+    <label>Confirm new password</label>
+    <input id="cpPass2" type="password" autocomplete="new-password" placeholder="Repeat password">
+    <div class="actions">
+      <button class="cancel" onclick="closeCpModal()">Cancel</button>
+      <button class="primary" id="cpBtn" onclick="doChangePassword()">Save password</button>
+    </div>
+    <div class="msg" id="cpMsg"></div>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
 <div id="appShell">
   <div id="logoutBar">
     <span class="who" id="whoami"></span>
+    <button onclick="openCpModal()">Change password</button>
     <button onclick="doLogout()">Log out</button>
   </div>
   <div class="wrap">
@@ -221,12 +253,12 @@ body.locked{overflow:hidden}
 
 <script>
 let DATA=null;
-const money=v=> v==null? "—" : "$"+Math.round(v).toLocaleString();
-const prevMonth=m=>{ let [y,mm]=m.split("-").map(Number); mm--; if(mm<1){mm=12;y--;} return y+"-"+String(mm).padStart(2,"0"); };
-const prevYear=m=>{ let [y,mm]=m.split("-"); return (Number(y)-1)+"-"+mm; };
-function monthsWithData(){ return DATA.months.filter(m=>Object.values(DATA.markets).some(s=>s[m]&&s[m].n>0)); }
-function pct(cur,base){ if(cur==null||base==null||base===0) return null; return (cur-base)/base*100; }
-function chgCell(p){ if(p==null) return '<span class="muted">—</span>'; const c=p>0.5?"up":(p<-0.5?"dn":"muted"); return `<span class="${c}">${p>0?"+":""}${p.toFixed(1)}%</span>`; }
+const money=v=>v==null?"—":"$"+Math.round(v).toLocaleString();
+const prevMonth=m=>{let[y,mm]=m.split("-").map(Number);mm--;if(mm<1){mm=12;y--;}return y+"-"+String(mm).padStart(2,"0");};
+const prevYear=m=>{let[y,mm]=m.split("-");return(Number(y)-1)+"-"+mm;};
+function monthsWithData(){return DATA.months.filter(m=>Object.values(DATA.markets).some(s=>s[m]&&s[m].n>0));}
+function pct(cur,base){if(cur==null||base==null||base===0)return null;return(cur-base)/base*100;}
+function chgCell(p){if(p==null)return'<span class="muted">—</span>';const c=p>0.5?"up":(p<-0.5?"dn":"muted");return`<span class="${c}">${p>0?"+":""}${p.toFixed(1)}%</span>`;}
 
 function showTab(t){
   document.getElementById('ownerView').classList.toggle('hidden',t!=='owner');
@@ -240,11 +272,11 @@ function renderOwner(){
   const month=document.getElementById('oMonth').value;
   const s=DATA.markets[mkt]||{};
   const cur=s[month]||{avg:null,n:0,median:null,confidence:"Estimated"};
-  const pm=s[prevMonth(month)]||{}; const py=s[prevYear(month)]||{};
+  const pm=s[prevMonth(month)]||{};const py=s[prevYear(month)]||{};
   document.getElementById('oTitle').textContent=mkt.replace(/-/,' · ');
   document.getElementById('oPeriod').textContent="Reporting period: "+month;
   const conf=cur.confidence;
-  const badge=document.getElementById('oBadge'); badge.className="badge "+conf;
+  const badge=document.getElementById('oBadge');badge.className="badge "+conf;
   const nTxt=cur.n>0?`${conf} confidence · ${cur.n} listing${cur.n===1?"":"s"}`:"Estimated · not observed this month";
   document.getElementById('oBadgeTxt').textContent=nTxt;
   document.getElementById('oAvg').textContent=money(cur.avg);
@@ -275,22 +307,19 @@ function drawChart(mkt,endMonth){
   const vals=pts.filter(p=>p.v!=null).map(p=>p.v);
   const svg=document.getElementById('oChart');
   document.getElementById('oChartTitle').textContent=`6-Month Rent Trend — ${mkt.replace(/-/,' · ')}`;
-  if(vals.length<2){ svg.innerHTML=`<text x="320" y="100" text-anchor="middle" fill="#94a3b0" font-size="13">Not enough data to plot a trend</text>`; return; }
-  const min=Math.min(...vals)*0.96, max=Math.max(...vals)*1.04;
-  const X=i=>70+i*((560)/(pts.length-1));
+  if(vals.length<2){svg.innerHTML=`<text x="320" y="100" text-anchor="middle" fill="#94a3b0" font-size="13">Not enough data to plot a trend</text>`;return;}
+  const min=Math.min(...vals)*0.96,max=Math.max(...vals)*1.04;
+  const X=i=>70+i*(560/(pts.length-1));
   const Y=v=>170-((v-min)/(max-min))*150;
-  let poly="", dots="", labels="";
-  let lastValid=null;
+  let poly="",dots="",labels="",lastValid=null;
   pts.forEach((p,i)=>{
-    if(p.v!=null){ const x=X(i),y=Y(p.v);
+    if(p.v!=null){const x=X(i),y=Y(p.v);
       poly+=(lastValid==null?"":" ")+`${x},${y}`;
       dots+=`<circle cx="${x}" cy="${y}" r="${i===pts.length-1?5.5:4.5}" fill="#0f2942"/>`;
-      lastValid=i;
-    }
+      lastValid=i;}
     labels+=`<text x="${X(i)}" y="188" font-size="10" fill="#94a3b0" text-anchor="middle">${p.m.slice(5)}</text>`;
   });
-  svg.innerHTML=`
-    <line x1="40" y1="20" x2="40" y2="170" stroke="#e2e8ee"/>
+  svg.innerHTML=`<line x1="40" y1="20" x2="40" y2="170" stroke="#e2e8ee"/>
     <line x1="40" y1="170" x2="620" y2="170" stroke="#e2e8ee"/>
     <text x="8" y="30" font-size="10" fill="#94a3b0">${Math.round(max)}</text>
     <text x="8" y="168" font-size="10" fill="#94a3b0">${Math.round(min)}</text>
@@ -302,25 +331,17 @@ function renderMgr(){
   const month=document.getElementById('mMonth').value;
   const sort=document.getElementById('mSort').value;
   let rows=Object.keys(DATA.markets).map(mkt=>{
-    const s=DATA.markets[mkt]; const cur=s[month]||{avg:null,n:0,median:null,confidence:"Estimated"};
-    const pm=s[prevMonth(month)]||{}, py=s[prevYear(month)]||{};
-    return {mkt,cur,mom:pct(cur.avg,pm.avg),yoy:pct(cur.avg,py.avg)};
+    const s=DATA.markets[mkt];const cur=s[month]||{avg:null,n:0,median:null,confidence:"Estimated"};
+    const pm=s[prevMonth(month)]||{},py=s[prevYear(month)]||{};
+    return{mkt,cur,mom:pct(cur.avg,pm.avg),yoy:pct(cur.avg,py.avg)};
   });
   const rank={Estimated:0,Low:1,Medium:2,High:3};
-  if(sort==='weak') rows.sort((a,b)=>rank[a.cur.confidence]-rank[b.cur.confidence]||a.cur.n-b.cur.n);
-  else if(sort==='mom') rows.sort((a,b)=>Math.abs(b.mom||0)-Math.abs(a.mom||0));
+  if(sort==='weak')rows.sort((a,b)=>rank[a.cur.confidence]-rank[b.cur.confidence]||a.cur.n-b.cur.n);
+  else if(sort==='mom')rows.sort((a,b)=>Math.abs(b.mom||0)-Math.abs(a.mom||0));
   else rows.sort((a,b)=>a.mkt.localeCompare(b.mkt));
-  const tb=document.getElementById('mBody');
-  tb.innerHTML=rows.map(r=>{
+  document.getElementById('mBody').innerHTML=rows.map(r=>{
     const weak=(r.cur.confidence==='Low'||r.cur.confidence==='Estimated')?'weak':'';
-    return `<tr class="${weak}">
-      <td class="mkt">${r.mkt.replace(/-/,' · ')}</td>
-      <td class="num">${money(r.cur.avg)}</td>
-      <td class="num">${money(r.cur.median)}</td>
-      <td class="num">${chgCell(r.mom)}</td>
-      <td class="num">${chgCell(r.yoy)}</td>
-      <td><span class="cf ${r.cur.confidence}">● ${r.cur.confidence}${r.cur.n?` · n${r.cur.n}`:''}</span></td>
-    </tr>`;
+    return`<tr class="${weak}"><td class="mkt">${r.mkt.replace(/-/,' · ')}</td><td class="num">${money(r.cur.avg)}</td><td class="num">${money(r.cur.median)}</td><td class="num">${chgCell(r.mom)}</td><td class="num">${chgCell(r.yoy)}</td><td><span class="cf ${r.cur.confidence}">● ${r.cur.confidence}${r.cur.n?` · n${r.cur.n}`:''}</span></td></tr>`;
   }).join("");
   const total=rows.reduce((s,r)=>s+(r.cur.n||0),0);
   const thin=rows.filter(r=>r.cur.confidence==='Low'||r.cur.confidence==='Estimated').length;
@@ -335,7 +356,7 @@ function initSelectors(){
   const withData=monthsWithData();
   const latest=withData[withData.length-1];
   const mkts=Object.keys(DATA.markets).sort();
-  const oM=document.getElementById('oMarket'); oM.innerHTML=mkts.map(m=>`<option>${m}</option>`).join("");
+  const oM=document.getElementById('oMarket');oM.innerHTML=mkts.map(m=>`<option>${m}</option>`).join("");
   const monthOpts=withData.map(m=>`<option>${m}</option>`).join("");
   document.getElementById('oMonth').innerHTML=monthOpts;
   document.getElementById('mMonth').innerHTML=monthOpts;
@@ -354,26 +375,21 @@ let DATA_LOADED=false;
 
 function msg(text,kind){
   const b=document.getElementById('gateMsgBox');
-  if(!text){ b.className='msg'; b.textContent=''; return; }
-  b.className='msg '+(kind||'info'); b.textContent=text;
+  if(!text){b.className='msg';b.textContent='';return;}
+  b.className='msg '+(kind||'info');b.textContent=text;
 }
-
 function showView(id){
-  ['viewLogin','viewReset','viewNewPass'].forEach(v=>{
-    document.getElementById(v).style.display=(v===id)?'block':'none';
-  });
+  ['viewLogin','viewReset'].forEach(v=>{document.getElementById(v).style.display=(v===id)?'block':'none';});
   msg('');
 }
-
-function showLogin(){ showView('viewLogin'); document.getElementById('gateTitle').textContent='Sign in to continue'; }
-function showReset(){ showView('viewReset'); document.getElementById('gateTitle').textContent='Reset your password'; }
-function showNewPass(){ showView('viewNewPass'); document.getElementById('gateTitle').textContent='Set your password'; }
+function showLogin(){showView('viewLogin');document.getElementById('gateTitle').textContent='Sign in to continue';}
+function showReset(){showView('viewReset');document.getElementById('gateTitle').textContent='Reset your password';}
 
 function loadData(){
-  if(DATA_LOADED) return; DATA_LOADED=true;
+  if(DATA_LOADED)return;DATA_LOADED=true;
   fetch('data.json').then(r=>r.json()).then(d=>{
-    DATA=d; initSelectors(); renderOwner(); renderMgr();
-  }).catch(()=>{ document.getElementById('meta').textContent='Could not load data.'; });
+    DATA=d;initSelectors();renderOwner();renderMgr();
+  }).catch(()=>{document.getElementById('meta').textContent='Could not load data.';});
 }
 
 function unlock(session){
@@ -382,7 +398,7 @@ function unlock(session){
   document.getElementById('logoutBar').style.display='flex';
   document.body.classList.remove('locked');
   const email=session&&session.user&&session.user.email||'';
-  document.getElementById('whoami').textContent=email?('Signed in as '+email):'';
+  document.getElementById('whoami').textContent=email?'Signed in as '+email:'';
   loadData();
 }
 
@@ -395,77 +411,74 @@ function lock(){
 async function doLogin(){
   const email=document.getElementById('loginEmail').value.trim();
   const pass=document.getElementById('loginPass').value;
-  if(!email||!pass){ msg('Please enter your email and password.','warn'); return; }
-  const btn=document.getElementById('loginBtn'); btn.disabled=true; msg('Signing in…');
-  const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
+  if(!email||!pass){msg('Please enter your email and password.','warn');return;}
+  const btn=document.getElementById('loginBtn');btn.disabled=true;msg('Signing in…');
+  const{error}=await sb.auth.signInWithPassword({email,password:pass});
   btn.disabled=false;
-  if(error){ msg(error.message||'Sign-in failed.','warn'); return; }
+  if(error){msg(error.message||'Sign-in failed.','warn');return;}
 }
 
 async function doResetRequest(){
   const email=document.getElementById('resetEmail').value.trim();
-  if(!email){ msg('Please enter your email.','warn'); return; }
-  const btn=document.getElementById('resetBtn'); btn.disabled=true; msg('Sending…');
-  const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin+window.location.pathname});
+  if(!email){msg('Please enter your email.','warn');return;}
+  const btn=document.getElementById('resetBtn');btn.disabled=true;msg('Sending…');
+  const{error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin+window.location.pathname});
   btn.disabled=false;
-  if(error){ msg(error.message||'Could not send reset email.','warn'); return; }
-  msg('Check your email for a link to set your password.','info');
+  if(error){msg(error.message||'Could not send reset email.','warn');return;}
+  msg('Check your email for a password reset link.','info');
 }
 
-async function doSetPassword(){
-  const pass=document.getElementById('newPass').value;
-  if(!pass||pass.length<8){ msg('Password must be at least 8 characters.','warn'); return; }
-  const btn=document.getElementById('newPassBtn'); btn.disabled=true; msg('Saving…');
-  const {data,error}=await sb.auth.updateUser({password:pass});
+async function doLogout(){await sb.auth.signOut();location.reload();}
+
+// ---------- CHANGE PASSWORD MODAL ----------
+function openCpModal(){
+  document.getElementById('cpPass1').value='';
+  document.getElementById('cpPass2').value='';
+  cpMsg('');
+  document.getElementById('cpModal').classList.add('open');
+}
+function closeCpModal(){document.getElementById('cpModal').classList.remove('open');}
+
+function cpMsg(text,kind){
+  const b=document.getElementById('cpMsg');
+  if(!text){b.className='msg';b.textContent='';return;}
+  b.className='msg '+(kind||'info');b.textContent=text;
+}
+
+async function doChangePassword(){
+  const p1=document.getElementById('cpPass1').value;
+  const p2=document.getElementById('cpPass2').value;
+  if(!p1||p1.length<8){cpMsg('Password must be at least 8 characters.','warn');return;}
+  if(p1!==p2){cpMsg('Passwords do not match.','warn');return;}
+  const btn=document.getElementById('cpBtn');btn.disabled=true;cpMsg('Saving…');
+  const{error}=await sb.auth.updateUser({password:p1});
   btn.disabled=false;
-  if(error){ msg(error.message||'Could not set password.','warn'); return; }
-  msg('Password set! Loading your dashboard…','info');
-  const {data:{session}}=await sb.auth.getSession();
-  if(session) unlock(session);
+  if(error){cpMsg(error.message||'Could not update password.','warn');return;}
+  cpMsg('Password updated successfully!','info');
+  setTimeout(()=>closeCpModal(),1800);
 }
 
-async function doLogout(){ await sb.auth.signOut(); location.reload(); }
-
-// Helper: does the current URL hash indicate an invite or recovery link?
-function isAuthLink(){
-  const h=window.location.hash||'';
-  return h.indexOf('type=recovery')>-1 || h.indexOf('type=invite')>-1;
-}
-
-// React to auth state changes
-sb.auth.onAuthStateChange((event,session)=>{
-  // PASSWORD_RECOVERY = user clicked a reset link
-  // SIGNED_IN when URL has type=invite or type=recovery = user clicked an invite link
-  // Both cases: show the set-password screen, do NOT unlock the dashboard
-  if(event==='PASSWORD_RECOVERY'||(event==='SIGNED_IN' && isAuthLink())){
-    lock();
-    showNewPass();
-    return;
-  }
-  if(session){ unlock(session); }
-  else { lock(); showLogin(); }
+// Close modal on backdrop click
+document.getElementById('cpModal').addEventListener('click',function(e){
+  if(e.target===this)closeCpModal();
 });
 
-// Initial page load check
+// Auth state
+sb.auth.onAuthStateChange((event,session)=>{
+  if(session){unlock(session);}
+  else{lock();showLogin();}
+});
+
 (async function(){
-  const {data:{session}}=await sb.auth.getSession();
-  if(isAuthLink()){
-    // Supabase may have already signed the user in from the URL token.
-    // Either way, we want the set-password screen — not the dashboard.
-    showNewPass();
-  } else if(session){
-    unlock(session);
-  } else {
-    lock(); showLogin();
-  }
+  const{data:{session}}=await sb.auth.getSession();
+  if(session){unlock(session);}
+  else{lock();showLogin();}
 })();
 
-// Enter key submits the visible form
 document.addEventListener('keydown',function(e){
-  if(e.key!=='Enter') return;
-  if(document.getElementById('viewLogin').style.display!=='none') doLogin();
-  else if(document.getElementById('viewReset').style.display!=='none') doResetRequest();
-  else if(document.getElementById('viewNewPass').style.display!=='none') doSetPassword();
+  if(e.key!=='Enter'){return;}
+  if(document.getElementById('viewLogin').style.display!=='none')doLogin();
+  else if(document.getElementById('viewReset').style.display!=='none')doResetRequest();
 });
 </script>
 </body>
