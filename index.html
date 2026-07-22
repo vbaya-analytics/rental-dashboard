@@ -77,7 +77,7 @@
   .toolbar label{font-size:12px;color:var(--slate);font-weight:600}
 
   /* ---------- LOGIN GATE ---------- */
-  #gate{position:fixed;inset:0;background:linear-gradient(135deg,#0f2942,#1c3d5a);display:flex;align-items:center;justify-content:center;z-index:9999;padding:24px}
+  #gate{position:fixed;inset:0;background:linear-gradient(135deg,#0f2942,#1c3d5a);display:flex;align-items:center;justify-content:center;z-index:10;padding:24px}
   #gate .card{background:#fff;border-radius:16px;padding:40px 44px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.35);text-align:center}
   #gate .kick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8a04a;font-weight:700}
   #gate h1{font-size:24px;font-weight:800;color:#0f2942;margin:8px 0 6px}
@@ -86,6 +86,8 @@
   #gate button:hover{background:#1c3d5a}
   #gate .note{font-size:12px;color:#94a3b0;margin-top:18px}
   body.locked{overflow:hidden}
+  #netlify-identity-widget{z-index:99999 !important;position:relative}
+  .netlify-identity-modal,[class*="netlify-identity"]{z-index:99999 !important}
   #appShell{display:none}
   #logoutBar{display:none;justify-content:flex-end;align-items:center;gap:12px;margin-bottom:12px}
   #logoutBar .who{font-size:12px;color:#5a6b7b}
@@ -101,7 +103,7 @@
     <div class="kick">Rental Confidence Dashboard</div>
     <h1>Sign in to continue</h1>
     <p>This dashboard contains confidential market data and is available to invited users only.</p>
-    <button onclick="netlifyIdentity.open('login')">Log in</button>
+    <button id="loginBtn" onclick="doLogin()">Log in</button>
     <div class="note">Access is by invitation. If you need an account, contact your administrator.</div>
   </div>
 </div>
@@ -347,6 +349,24 @@ function lock(){
   document.getElementById('appShell').style.display='none';
   document.body.classList.add('locked');
 }
+function doLogin(){
+  if(!window.netlifyIdentity){ alert('Login service still loading — please wait a moment and try again.'); return; }
+  netlifyIdentity.open('login');
+}
+// Handle invite / recovery / confirmation tokens arriving in the URL hash
+(function(){
+  var h = window.location.hash || '';
+  if(h.indexOf('invite_token=')>-1 || h.indexOf('recovery_token=')>-1 || h.indexOf('confirmation_token=')>-1){
+    var tryOpen = setInterval(function(){
+      if(window.netlifyIdentity){
+        clearInterval(tryOpen);
+        if(h.indexOf('invite_token=')>-1) netlifyIdentity.open('signup');
+        else netlifyIdentity.open();
+      }
+    },200);
+    setTimeout(function(){clearInterval(tryOpen);},8000);
+  }
+})();
 if(window.netlifyIdentity){
   netlifyIdentity.on('init', user => { if(user) unlock(user); else lock(); });
   netlifyIdentity.on('login', user => { unlock(user); netlifyIdentity.close(); });
