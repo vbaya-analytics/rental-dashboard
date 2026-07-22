@@ -78,20 +78,30 @@
 
   /* ---------- LOGIN GATE ---------- */
   #gate{position:fixed;inset:0;background:linear-gradient(135deg,#0f2942,#1c3d5a);display:flex;align-items:center;justify-content:center;z-index:10;padding:24px}
-  #gate .card{background:#fff;border-radius:16px;padding:40px 44px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.35);text-align:center}
+  #gate .card{background:#fff;border-radius:16px;padding:38px 42px;max-width:460px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.35);text-align:center}
   #gate .kick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8a04a;font-weight:700}
-  #gate h1{font-size:24px;font-weight:800;color:#0f2942;margin:8px 0 6px}
-  #gate p{font-size:14px;color:#5a6b7b;line-height:1.55;margin-bottom:22px}
-  #gate button{background:#0f2942;color:#fff;border:0;border-radius:10px;padding:13px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
-  #gate button:hover{background:#1c3d5a}
-  #gate .note{font-size:12px;color:#94a3b0;margin-top:18px}
+  #gate h1{font-size:23px;font-weight:800;color:#0f2942;margin:8px 0 6px}
+  #gate p{font-size:14px;color:#5a6b7b;line-height:1.55;margin-bottom:20px}
+  #gate button.primary{background:#0f2942;color:#fff;border:0;border-radius:10px;padding:13px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+  #gate button.primary:hover{background:#1c3d5a}
+  #gate .note{font-size:12px;color:#94a3b0;margin-top:16px;line-height:1.5}
+  #gate .status{display:none;font-size:13px;padding:11px 14px;border-radius:9px;margin-bottom:16px;line-height:1.5}
+  #gate .status.info{display:block;background:#e6f2ec;color:#2e7d5b;border:1px solid #bfe3d0}
+  #gate .status.warn{display:block;background:#fbeee9;color:#c25a3a;border:1px solid #f0cdc0}
   body.locked{overflow:hidden}
+  #appShell{display:none}
   #netlify-identity-widget{z-index:99999 !important;position:relative}
   .netlify-identity-modal,[class*="netlify-identity"]{z-index:99999 !important}
-  #appShell{display:none}
-  #logoutBar{display:none;justify-content:flex-end;align-items:center;gap:12px;margin-bottom:12px}
+  /* top bar when signed in */
+  #logoutBar{display:none;justify-content:flex-end;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
   #logoutBar .who{font-size:12px;color:#5a6b7b}
   #logoutBar button{background:#fff;border:1px solid #e2e8ee;color:#0f2942;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+  #logoutBar button:hover{background:#f4f6f9}
+  #logoutBar button.accent{background:#c8a04a;border-color:#c8a04a;color:#fff}
+  /* first-run banner prompting password creation */
+  #pwBanner{display:none;background:#faf1dd;border:1px solid #e8d4a0;border-left:4px solid #c9962e;border-radius:10px;padding:13px 16px;margin-bottom:16px;font-size:13.5px;color:#1a2530;line-height:1.55}
+  #pwBanner b{color:#c9962e}
+  #pwBanner button{margin-left:10px;background:#0f2942;color:#fff;border:0;border-radius:7px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
@@ -103,13 +113,22 @@
     <div class="kick">Rental Confidence Dashboard</div>
     <h1>Sign in to continue</h1>
     <p>This dashboard contains confidential market data and is available to invited users only.</p>
-    <button id="loginBtn" onclick="doLogin()">Log in</button>
-    <div class="note">Access is by invitation. If you need an account, contact your administrator.</div>
+    <div class="status" id="gateStatus"></div>
+    <button class="primary" id="loginBtn" onclick="doLogin()">Log in</button>
+    <div class="note">Access is by invitation.<br>First time here? Use the invite link in your email, or click Log in then <b>&ldquo;Forgot password?&rdquo;</b> to set your password.</div>
   </div>
 </div>
 
 <div id="appShell">
-<div id="logoutBar"><span class="who" id="whoami"></span><button onclick="netlifyIdentity.logout()">Log out</button></div>
+<div id="logoutBar">
+  <span class="who" id="whoami"></span>
+  <button onclick="changePassword()">Set / change password</button>
+  <button onclick="netlifyIdentity.logout()">Log out</button>
+</div>
+<div id="pwBanner">
+  <b>Finish setting up your account.</b> You&rsquo;re signed in, but no password is set yet &mdash; so you won&rsquo;t be able to log back in later. Set one now.
+  <button onclick="changePassword()">Set password</button>
+</div>
 <div class="wrap">
   <div class="appbar">
     <div class="brand">Rental Confidence Dashboard</div>
@@ -324,56 +343,102 @@ function initSelectors(){
   document.getElementById('meta').textContent=`Data generated ${DATA.generated} · ${mkts.length} markets`;
 }
 
-// ---------- AUTH-GATED DATA LOADING ----------
+// ================= AUTH =================
 let DATA_LOADED=false;
+
+function gateMsg(text,kind){
+  const el=document.getElementById('gateStatus');
+  if(!el) return;
+  if(!text){ el.className='status'; el.textContent=''; return; }
+  el.className='status '+(kind||'info');
+  el.textContent=text;
+}
+
 function loadData(){
   if(DATA_LOADED) return;
   DATA_LOADED=true;
   fetch('data.json').then(r=>r.json()).then(d=>{
     DATA=d; initSelectors(); renderOwner(); renderMgr();
   }).catch(e=>{
-    document.getElementById('meta').textContent='Could not load data.json.';
+    document.getElementById('meta').textContent='Could not load data.';
   });
 }
+
+function doLogin(){
+  if(!window.netlifyIdentity){
+    gateMsg('Sign-in service is still loading. Please wait a moment and try again.','warn');
+    return;
+  }
+  netlifyIdentity.open('login');
+}
+
+// Opens the widget so the user can set/change their password
+function changePassword(){
+  if(!window.netlifyIdentity) return;
+  // Netlify's widget exposes password change via the logged-in "user settings" view
+  netlifyIdentity.open();
+}
+
+// Track whether this session came from a recovery/invite link (means no password yet)
+let CAME_FROM_TOKEN=false;
+
 function unlock(user){
   document.getElementById('gate').style.display='none';
   document.getElementById('appShell').style.display='block';
   document.getElementById('logoutBar').style.display='flex';
   document.body.classList.remove('locked');
-  const who=user&&(user.user_metadata&&user.user_metadata.full_name||user.email)||'';
+  const who=(user&&((user.user_metadata&&user.user_metadata.full_name)||user.email))||'';
   document.getElementById('whoami').textContent=who?('Signed in as '+who):'';
+  // Prompt for password if this session started from a token link
+  if(CAME_FROM_TOKEN){
+    const b=document.getElementById('pwBanner');
+    if(b) b.style.display='block';
+  }
   loadData();
 }
+
 function lock(){
   document.getElementById('gate').style.display='flex';
   document.getElementById('appShell').style.display='none';
   document.body.classList.add('locked');
 }
-function doLogin(){
-  if(!window.netlifyIdentity){ alert('Login service still loading — please wait a moment and try again.'); return; }
-  netlifyIdentity.open('login');
-}
-// Handle invite / recovery / confirmation tokens arriving in the URL hash
+
+// ---- Handle tokens arriving in the URL hash (invite / recovery / confirmation) ----
 (function(){
   var h = window.location.hash || '';
-  if(h.indexOf('invite_token=')>-1 || h.indexOf('recovery_token=')>-1 || h.indexOf('confirmation_token=')>-1){
-    var tryOpen = setInterval(function(){
+  var isInvite   = h.indexOf('invite_token=')>-1;
+  var isRecovery = h.indexOf('recovery_token=')>-1;
+  var isConfirm  = h.indexOf('confirmation_token=')>-1;
+  if(isInvite||isRecovery||isConfirm){
+    CAME_FROM_TOKEN=true;
+    gateMsg('Setting up your account…');
+    var tries=0;
+    var t=setInterval(function(){
+      tries++;
       if(window.netlifyIdentity){
-        clearInterval(tryOpen);
-        if(h.indexOf('invite_token=')>-1) netlifyIdentity.open('signup');
-        else netlifyIdentity.open();
+        clearInterval(t);
+        if(isInvite) netlifyIdentity.open('signup');
+        else if(isRecovery) netlifyIdentity.open();
+      } else if(tries>40){
+        clearInterval(t);
+        gateMsg('Could not start the sign-in service. Please reload the page.','warn');
       }
     },200);
-    setTimeout(function(){clearInterval(tryOpen);},8000);
   }
 })();
+
 if(window.netlifyIdentity){
   netlifyIdentity.on('init', user => { if(user) unlock(user); else lock(); });
   netlifyIdentity.on('login', user => { unlock(user); netlifyIdentity.close(); });
   netlifyIdentity.on('logout', () => { location.reload(); });
+  netlifyIdentity.on('error', err => {
+    console.error('Identity error:', err);
+    gateMsg('Sign-in problem: '+(err&&err.message?err.message:'unknown error')+'. Try again, or use “Forgot password?”.','warn');
+  });
   netlifyIdentity.init();
 } else {
   lock();
+  gateMsg('Sign-in service failed to load. Check your connection and reload.','warn');
 }
 </script>
 </div>
