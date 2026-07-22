@@ -75,9 +75,39 @@
   tr.weak{background:#fdfaf3}
   .toolbar{padding:14px 30px;background:#f8fafc;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
   .toolbar label{font-size:12px;color:var(--slate);font-weight:600}
+
+  /* ---------- LOGIN GATE ---------- */
+  #gate{position:fixed;inset:0;background:linear-gradient(135deg,#0f2942,#1c3d5a);display:flex;align-items:center;justify-content:center;z-index:9999;padding:24px}
+  #gate .card{background:#fff;border-radius:16px;padding:40px 44px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.35);text-align:center}
+  #gate .kick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8a04a;font-weight:700}
+  #gate h1{font-size:24px;font-weight:800;color:#0f2942;margin:8px 0 6px}
+  #gate p{font-size:14px;color:#5a6b7b;line-height:1.55;margin-bottom:22px}
+  #gate button{background:#0f2942;color:#fff;border:0;border-radius:10px;padding:13px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+  #gate button:hover{background:#1c3d5a}
+  #gate .note{font-size:12px;color:#94a3b0;margin-top:18px}
+  body.locked{overflow:hidden}
+  #appShell{display:none}
+  #logoutBar{display:none;justify-content:flex-end;align-items:center;gap:12px;margin-bottom:12px}
+  #logoutBar .who{font-size:12px;color:#5a6b7b}
+  #logoutBar button{background:#fff;border:1px solid #e2e8ee;color:#0f2942;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
 </style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<body>
+<body class="locked">
+
+<!-- ============ LOGIN GATE ============ -->
+<div id="gate">
+  <div class="card">
+    <div class="kick">Rental Confidence Dashboard</div>
+    <h1>Sign in to continue</h1>
+    <p>This dashboard contains confidential market data and is available to invited users only.</p>
+    <button onclick="netlifyIdentity.open('login')">Log in</button>
+    <div class="note">Access is by invitation. If you need an account, contact your administrator.</div>
+  </div>
+</div>
+
+<div id="appShell">
+<div id="logoutBar"><span class="who" id="whoami"></span><button onclick="netlifyIdentity.logout()">Log out</button></div>
 <div class="wrap">
   <div class="appbar">
     <div class="brand">Rental Confidence Dashboard</div>
@@ -292,11 +322,40 @@ function initSelectors(){
   document.getElementById('meta').textContent=`Data generated ${DATA.generated} · ${mkts.length} markets`;
 }
 
-fetch('data.json').then(r=>r.json()).then(d=>{
-  DATA=d; initSelectors(); renderOwner(); renderMgr();
-}).catch(e=>{
-  document.getElementById('meta').textContent='Could not load data.json — run export_data.py first, and open this page from the same folder.';
-});
+// ---------- AUTH-GATED DATA LOADING ----------
+let DATA_LOADED=false;
+function loadData(){
+  if(DATA_LOADED) return;
+  DATA_LOADED=true;
+  fetch('data.json').then(r=>r.json()).then(d=>{
+    DATA=d; initSelectors(); renderOwner(); renderMgr();
+  }).catch(e=>{
+    document.getElementById('meta').textContent='Could not load data.json.';
+  });
+}
+function unlock(user){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('appShell').style.display='block';
+  document.getElementById('logoutBar').style.display='flex';
+  document.body.classList.remove('locked');
+  const who=user&&(user.user_metadata&&user.user_metadata.full_name||user.email)||'';
+  document.getElementById('whoami').textContent=who?('Signed in as '+who):'';
+  loadData();
+}
+function lock(){
+  document.getElementById('gate').style.display='flex';
+  document.getElementById('appShell').style.display='none';
+  document.body.classList.add('locked');
+}
+if(window.netlifyIdentity){
+  netlifyIdentity.on('init', user => { if(user) unlock(user); else lock(); });
+  netlifyIdentity.on('login', user => { unlock(user); netlifyIdentity.close(); });
+  netlifyIdentity.on('logout', () => { location.reload(); });
+  netlifyIdentity.init();
+} else {
+  lock();
+}
 </script>
+</div>
 </body>
 </html>
