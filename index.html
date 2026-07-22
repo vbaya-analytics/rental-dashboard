@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rental Confidence Dashboard</title>
+<style>
+  :root{
+    --navy:#0f2942; --navy2:#1c3d5a; --gold:#c8a04a; --gold-soft:#e8d4a0;
+    --ink:#1a2530; --slate:#5a6b7b; --line:#e2e8ee; --bg:#f4f6f9;
+    --hi:#2e7d5b; --med:#c9962e; --lo:#c25a3a; --est:#8896a4;
+    --hi-bg:#e6f2ec; --med-bg:#faf1dd; --lo-bg:#fae7e0; --est-bg:#eef1f4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#dfe4ea;color:var(--ink);padding:28px;line-height:1.45}
+  .wrap{max-width:1120px;margin:0 auto}
+  .appbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+  .appbar .brand{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#64748b;font-weight:700}
+  .appbar .meta{font-size:12px;color:#8b98a5}
+  .tabs{display:flex;gap:8px;margin-bottom:20px}
+  .tab{padding:10px 22px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;background:#fff;color:var(--slate);border:1px solid var(--line)}
+  .tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .frame{background:var(--bg);border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(15,41,66,.12)}
+  select{font-size:14px;padding:9px 14px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--navy);font-weight:600;cursor:pointer}
+  .hidden{display:none}
+
+  /* ---------- OWNER ---------- */
+  .os{background:#fbfcfd}
+  .os .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:26px 40px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px}
+  .os .hero .kick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);font-weight:700}
+  .os .hero h2{font-size:26px;font-weight:700;margin-top:6px}
+  .os .hero .sub{color:#b8c6d4;font-size:13.5px;margin-top:4px}
+  .os .badge{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:600}
+  .os .badge .dot{width:8px;height:8px;border-radius:50%}
+  .badge.High{background:rgba(46,125,91,.22);border:1px solid rgba(120,200,160,.5);color:#bfe9d3} .badge.High .dot{background:#4fd6a0}
+  .badge.Medium{background:rgba(201,150,46,.22);border:1px solid rgba(230,200,120,.5);color:#f0dca6} .badge.Medium .dot{background:#e8c264}
+  .badge.Low{background:rgba(194,90,58,.22);border:1px solid rgba(230,150,120,.5);color:#f3c9b8} .badge.Low .dot{background:#e58a68}
+  .badge.Estimated{background:rgba(136,150,164,.22);border:1px solid rgba(180,190,200,.5);color:#d3dae1} .badge.Estimated .dot{background:#aab4bf}
+  .os .body{padding:30px 40px}
+  .os .headline{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .os .big{font-size:44px;font-weight:800;color:var(--navy);letter-spacing:-1px}
+  .os .chg{font-size:15px;font-weight:700;padding:3px 12px;border-radius:8px}
+  .chg.up{color:var(--hi);background:var(--hi-bg)} .chg.dn{color:var(--lo);background:var(--lo-bg)} .chg.flat{color:var(--est);background:#eef1f4}
+  .os .cap{color:var(--slate);font-size:14px;margin-bottom:24px}
+  .os .reliab{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px 20px;font-size:14px;color:#334;margin-bottom:24px;border-left:4px solid var(--est)}
+  .os .chartwrap{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px}
+  .os .ct{font-size:13px;font-weight:700;color:var(--navy)}
+  .os .cs{font-size:12px;color:#94a3b0;margin-bottom:12px}
+  .os .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+  .os .stat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 18px}
+  .os .stat .k{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#94a3b0;font-weight:700}
+  .os .stat .v{font-size:22px;font-weight:800;color:var(--navy);margin-top:4px}
+  .os .stat .m{font-size:12px;color:var(--slate);margin-top:2px}
+
+  /* ---------- MANAGER ---------- */
+  .mw{background:#fff}
+  .mw .bar{background:var(--navy);padding:20px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .mw .bar h2{color:#fff;font-size:19px;font-weight:700}
+  .mw .bar .sub{color:#8ba0b5;font-size:12.5px;margin-top:2px}
+  .mw .kpis{display:flex;gap:10px}
+  .mw .kpi{background:#16334d;border:1px solid #244a68;border-radius:9px;padding:9px 16px;text-align:center;min-width:82px}
+  .mw .kpi .n{color:#fff;font-size:20px;font-weight:800}
+  .mw .kpi .l{color:#8ba0b5;font-size:10px;letter-spacing:.5px;text-transform:uppercase;margin-top:1px}
+  .mw .kpi.alert .n{color:var(--gold)}
+  .mw .scroll{max-height:560px;overflow-y:auto}
+  table{width:100%;border-collapse:collapse}
+  .mw th{position:sticky;top:0;background:#fff;text-align:left;font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:#94a3b0;font-weight:700;padding:13px 16px 9px;border-bottom:2px solid var(--line);z-index:1}
+  .mw th.num,.mw td.num{text-align:right}
+  .mw td{padding:10px 16px;font-size:13.5px;border-bottom:1px solid #eef2f6}
+  .mw td.mkt{font-weight:700;color:var(--navy)}
+  .cf{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:6px}
+  .cf.High{background:var(--hi-bg);color:var(--hi)} .cf.Medium{background:var(--med-bg);color:var(--med)}
+  .cf.Low{background:var(--lo-bg);color:var(--lo)} .cf.Estimated{background:var(--est-bg);color:var(--est)}
+  .up{color:var(--hi);font-weight:700} .dn{color:var(--lo);font-weight:700} .muted{color:#94a3b0}
+  tr.weak{background:#fdfaf3}
+  .toolbar{padding:14px 30px;background:#f8fafc;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .toolbar label{font-size:12px;color:var(--slate);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="appbar">
+    <div class="brand">Rental Confidence Dashboard</div>
+    <div class="meta" id="meta">loading…</div>
+  </div>
+  <div class="tabs">
+    <div class="tab on" id="tabOwner" onclick="showTab('owner')">Owner Summary</div>
+    <div class="tab" id="tabMgr" onclick="showTab('mgr')">Manager Workbench</div>
+  </div>
+
+  <!-- OWNER -->
+  <div id="ownerView" class="frame"><div class="os">
+    <div class="hero">
+      <div>
+        <div class="kick">Owner Market Summary</div>
+        <h2 id="oTitle">—</h2>
+        <div class="sub" id="oPeriod">—</div>
+        <div class="badge" id="oBadge"><span class="dot"></span><span id="oBadgeTxt"></span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <select id="oMarket" onchange="renderOwner()"></select>
+        <select id="oMonth" onchange="renderOwner()"></select>
+      </div>
+    </div>
+    <div class="body">
+      <div class="headline"><div class="big" id="oAvg">—</div><div class="chg" id="oMoM">—</div></div>
+      <div class="cap" id="oCap">—</div>
+      <div class="reliab" id="oReliab">—</div>
+      <div class="chartwrap">
+        <div class="ct" id="oChartTitle">6-Month Rent Trend</div>
+        <div class="cs">Average asking rent</div>
+        <svg id="oChart" viewBox="0 0 640 200" width="100%" height="200"></svg>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">Median rent</div><div class="v" id="oMed">—</div><div class="m">closest to typical unit</div></div>
+        <div class="stat"><div class="k">Sample size</div><div class="v" id="oN">—</div><div class="m">listings this month</div></div>
+        <div class="stat"><div class="k">YoY change</div><div class="v" id="oYoY">—</div><div class="m" id="oYoYm">—</div></div>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- MANAGER -->
+  <div id="mgrView" class="frame hidden"><div class="mw">
+    <div class="bar">
+      <div><h2>Manager Workbench</h2><div class="sub" id="mSub">All markets · variance &amp; data health</div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="n" id="kTotal">—</div><div class="l">Listings</div></div>
+        <div class="kpi alert"><div class="n" id="kThin">—</div><div class="l">Thin markets</div></div>
+        <div class="kpi"><div class="n" id="kHigh">—</div><div class="l">High conf.</div></div>
+      </div>
+    </div>
+    <div class="toolbar">
+      <label>Month:</label><select id="mMonth" onchange="renderMgr()"></select>
+      <label style="margin-left:8px">Sort:</label>
+      <select id="mSort" onchange="renderMgr()">
+        <option value="market">Market</option>
+        <option value="weak">Weakest data first</option>
+        <option value="mom">Biggest MoM swing</option>
+      </select>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Market</th><th class="num">Avg rent</th><th class="num">Median</th><th class="num">MoM</th><th class="num">YoY</th><th>Confidence</th></tr></thead>
+        <tbody id="mBody"></tbody>
+      </table>
+    </div>
+  </div></div>
+</div>
+
+<script>
+let DATA=null;
+
+const money=v=> v==null? "—" : "$"+Math.round(v).toLocaleString();
+const prevMonth=m=>{ // previous calendar month string
+  let [y,mm]=m.split("-").map(Number); mm--; if(mm<1){mm=12;y--;} return y+"-"+String(mm).padStart(2,"0");
+};
+const prevYear=m=>{ let [y,mm]=m.split("-"); return (Number(y)-1)+"-"+mm; };
+
+function monthsWithData(){ // months where at least one market has n>0
+  return DATA.months.filter(m=>Object.values(DATA.markets).some(s=>s[m]&&s[m].n>0));
+}
+function pct(cur,base){ if(cur==null||base==null||base===0) return null; return (cur-base)/base*100; }
+function chgHtml(p,cls){ if(p==null) return '<span class="chg flat muted">— n/a</span>';
+  const c = p>0.5?"up":(p<-0.5?"dn":"flat"); const arr=p>0.5?"▲":(p<-0.5?"▼":"▬");
+  return `<span class="${cls||'chg'} ${c}">${arr} ${p>0?"+":""}${p.toFixed(1)}%</span>`; }
+function chgCell(p){ if(p==null) return '<span class="muted">—</span>';
+  const c=p>0.5?"up":(p<-0.5?"dn":"muted"); return `<span class="${c}">${p>0?"+":""}${p.toFixed(1)}%</span>`; }
+
+function showTab(t){
+  document.getElementById('ownerView').classList.toggle('hidden',t!=='owner');
+  document.getElementById('mgrView').classList.toggle('hidden',t!=='mgr');
+  document.getElementById('tabOwner').classList.toggle('on',t==='owner');
+  document.getElementById('tabMgr').classList.toggle('on',t==='mgr');
+}
+
+function renderOwner(){
+  const mkt=document.getElementById('oMarket').value;
+  const month=document.getElementById('oMonth').value;
+  const s=DATA.markets[mkt]||{};
+  const cur=s[month]||{avg:null,n:0,median:null,confidence:"Estimated"};
+  const pm=s[prevMonth(month)]||{}; const py=s[prevYear(month)]||{};
+  document.getElementById('oTitle').textContent=mkt.replace(/-/,' · ');
+  document.getElementById('oPeriod').textContent="Reporting period: "+month;
+  const conf=cur.confidence;
+  const badge=document.getElementById('oBadge'); badge.className="badge "+conf;
+  const nTxt = cur.n>0 ? `${conf} confidence · ${cur.n} listing${cur.n===1?"":"s"}` : "Estimated · not observed this month";
+  document.getElementById('oBadgeTxt').textContent=nTxt;
+  document.getElementById('oAvg').textContent=money(cur.avg);
+  const mom=pct(cur.avg,pm.avg);
+  document.getElementById('oMoM').outerHTML=`<div class="chg ${mom==null?'flat':(mom>0.5?'up':(mom<-0.5?'dn':'flat'))}" id="oMoM">${mom==null?'— n/a':(mom>0?'▲ +':'▼ ')+mom.toFixed(1)+'%'} MoM</div>`;
+  document.getElementById('oCap').textContent = cur.avg==null ? "No verified listings for this market/month." :
+    `Average asking rent · median ${money(cur.median)}${pm.avg?` · prior month ${money(pm.avg)}`:''}`;
+  // reliability message keyed to confidence
+  const rel=document.getElementById('oReliab');
+  const msgs={
+    High:`This figure rests on a <b style="color:var(--hi)">deep, verified sample</b> of ${cur.n} listings — the strongest tier. Movement here is signal, not noise.`,
+    Medium:`Based on a <b style="color:var(--med)">moderate sample</b> of ${cur.n} listings. Directionally reliable, but treat single-month swings with some caution.`,
+    Low:`Based on a <b style="color:var(--lo)">thin sample</b> of ${cur.n} listing${cur.n===1?"":"s"}. The average is fragile — read it as indicative, not precise.`,
+    Estimated:`<b style="color:var(--est)">Not directly observed</b> this month. Any figure shown is interpolated and should be treated as a placeholder until real listings are collected.`
+  };
+  rel.style.borderLeftColor=getComputedStyle(document.documentElement).getPropertyValue('--'+conf.toLowerCase().slice(0,3)||'est');
+  rel.innerHTML=msgs[conf];
+  document.getElementById('oMed').textContent=money(cur.median);
+  document.getElementById('oN').textContent=cur.n||"0";
+  const yoy=pct(cur.avg,py.avg);
+  document.getElementById('oYoY').textContent=yoy==null?"— n/a":(yoy>0?"+":"")+yoy.toFixed(1)+"%";
+  document.getElementById('oYoYm').textContent=py.avg?`vs ${money(py.avg)} (${prevYear(month)})`:"no prior-year data";
+  drawChart(mkt,month);
+}
+
+function drawChart(mkt,endMonth){
+  const s=DATA.markets[mkt]||{};
+  // last 6 months up to endMonth
+  const idx=DATA.months.indexOf(endMonth);
+  const win=DATA.months.slice(Math.max(0,idx-5),idx+1);
+  const pts=win.map(m=>({m,v:(s[m]&&s[m].n>0)?s[m].avg:null}));
+  const vals=pts.filter(p=>p.v!=null).map(p=>p.v);
+  const svg=document.getElementById('oChart');
+  document.getElementById('oChartTitle').textContent=`6-Month Rent Trend — ${mkt.replace(/-/,' · ')}`;
+  if(vals.length<2){ svg.innerHTML=`<text x="320" y="100" text-anchor="middle" fill="#94a3b0" font-size="13">Not enough data to plot a trend</text>`; return; }
+  const min=Math.min(...vals)*0.96, max=Math.max(...vals)*1.04;
+  const X=i=>70+i*((560)/(pts.length-1));
+  const Y=v=>170-((v-min)/(max-min))*150;
+  let poly="", dots="", labels="";
+  let lastValid=null;
+  pts.forEach((p,i)=>{
+    if(p.v!=null){ const x=X(i),y=Y(p.v);
+      poly += (lastValid==null?"":" ")+`${x},${y}`;
+      dots+=`<circle cx="${x}" cy="${y}" r="${i===pts.length-1?5.5:4.5}" fill="#0f2942"/>`;
+      lastValid=i;
+    }
+    labels+=`<text x="${X(i)}" y="188" font-size="10" fill="#94a3b0" text-anchor="middle">${p.m.slice(5)}</text>`;
+  });
+  svg.innerHTML=`
+    <line x1="40" y1="20" x2="40" y2="170" stroke="#e2e8ee"/>
+    <line x1="40" y1="170" x2="620" y2="170" stroke="#e2e8ee"/>
+    <text x="8" y="30" font-size="10" fill="#94a3b0">${Math.round(max)}</text>
+    <text x="8" y="168" font-size="10" fill="#94a3b0">${Math.round(min)}</text>
+    <polyline fill="none" stroke="#c8a04a" stroke-width="3" points="${poly}"/>
+    ${dots}${labels}`;
+}
+
+function renderMgr(){
+  const month=document.getElementById('mMonth').value;
+  const sort=document.getElementById('mSort').value;
+  let rows=Object.keys(DATA.markets).map(mkt=>{
+    const s=DATA.markets[mkt]; const cur=s[month]||{avg:null,n:0,median:null,confidence:"Estimated"};
+    const pm=s[prevMonth(month)]||{}, py=s[prevYear(month)]||{};
+    return {mkt,cur,mom:pct(cur.avg,pm.avg),yoy:pct(cur.avg,py.avg)};
+  });
+  const rank={Estimated:0,Low:1,Medium:2,High:3};
+  if(sort==='weak') rows.sort((a,b)=>rank[a.cur.confidence]-rank[b.cur.confidence]||a.cur.n-b.cur.n);
+  else if(sort==='mom') rows.sort((a,b)=>Math.abs(b.mom||0)-Math.abs(a.mom||0));
+  else rows.sort((a,b)=>a.mkt.localeCompare(b.mkt));
+
+  const tb=document.getElementById('mBody');
+  tb.innerHTML=rows.map(r=>{
+    const weak=(r.cur.confidence==='Low'||r.cur.confidence==='Estimated')?'weak':'';
+    return `<tr class="${weak}">
+      <td class="mkt">${r.mkt.replace(/-/,' · ')}</td>
+      <td class="num">${money(r.cur.avg)}</td>
+      <td class="num">${money(r.cur.median)}</td>
+      <td class="num">${chgCell(r.mom)}</td>
+      <td class="num">${chgCell(r.yoy)}</td>
+      <td><span class="cf ${r.cur.confidence}">● ${r.cur.confidence}${r.cur.n?` · n${r.cur.n}`:''}</span></td>
+    </tr>`;
+  }).join("");
+
+  // KPIs
+  const total=rows.reduce((s,r)=>s+(r.cur.n||0),0);
+  const thin=rows.filter(r=>r.cur.confidence==='Low'||r.cur.confidence==='Estimated').length;
+  const high=rows.filter(r=>r.cur.confidence==='High').length;
+  document.getElementById('kTotal').textContent=total;
+  document.getElementById('kThin').textContent=thin;
+  document.getElementById('kHigh').textContent=high;
+  document.getElementById('mSub').textContent=`All ${rows.length} markets · ${month}`;
+}
+
+function initSelectors(){
+  const withData=monthsWithData();
+  const latest=withData[withData.length-1];
+  const mkts=Object.keys(DATA.markets).sort();
+  const oM=document.getElementById('oMarket'); oM.innerHTML=mkts.map(m=>`<option>${m}</option>`).join("");
+  const monthOpts=withData.map(m=>`<option>${m}</option>`).join("");
+  document.getElementById('oMonth').innerHTML=monthOpts;
+  document.getElementById('mMonth').innerHTML=monthOpts;
+  // default to a market that has data at latest month
+  const good=mkts.find(m=>DATA.markets[m][latest]&&DATA.markets[m][latest].n>0)||mkts[0];
+  oM.value=good;
+  document.getElementById('oMonth').value=latest;
+  document.getElementById('mMonth').value=latest;
+  document.getElementById('meta').textContent=`Data generated ${DATA.generated} · ${mkts.length} markets`;
+}
+
+fetch('data.json').then(r=>r.json()).then(d=>{
+  DATA=d; initSelectors(); renderOwner(); renderMgr();
+}).catch(e=>{
+  document.getElementById('meta').textContent='Could not load data.json — run export_data.py first, and open this page from the same folder.';
+});
+</script>
+</body>
+</html>
