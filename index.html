@@ -126,8 +126,8 @@
   <button onclick="netlifyIdentity.logout()">Log out</button>
 </div>
 <div id="pwBanner">
-  <b>Finish setting up your account.</b> You&rsquo;re signed in, but no password is set yet &mdash; so you won&rsquo;t be able to log back in later. Set one now.
-  <button onclick="changePassword()">Set password</button>
+  <b>Heads up.</b> You signed in through an email link, so you may not have a password set &mdash; meaning you&rsquo;d need a new email link next time. To set one, log out and use <b>&ldquo;Forgot password?&rdquo;</b> on the sign-in screen.
+  <button onclick="dismissBanner()">Got it</button>
 </div>
 <div class="wrap">
   <div class="appbar">
@@ -369,14 +369,24 @@ function doLogin(){
     gateMsg('Sign-in service is still loading. Please wait a moment and try again.','warn');
     return;
   }
-  netlifyIdentity.open('login');
+  openWidget('login');
 }
 
 // Opens the widget so the user can set/change their password
+function openWidget(view){
+  if(!window.netlifyIdentity) return;
+  var w=document.getElementById('netlify-identity-widget');
+  if(w){ w.style.pointerEvents='auto'; w.dataset.keep='1'; }
+  view ? netlifyIdentity.open(view) : netlifyIdentity.open();
+  setTimeout(function(){ if(w) delete w.dataset.keep; },1500);
+}
+// NOTE: Netlify's widget has no password-setting screen for an already
+// signed-in user. The only way to set a password is via a recovery email.
 function changePassword(){
   if(!window.netlifyIdentity) return;
-  // Netlify's widget exposes password change via the logged-in "user settings" view
-  netlifyIdentity.open();
+  netlifyIdentity.logout();
+  setTimeout(function(){ openWidget(); }, 600);
+  alert('To set a password, Netlify requires you to use the “Forgot password?” link on the login screen. You will be signed out now so you can do that.');
 }
 
 // Track whether this session came from a recovery/invite link (means no password yet)
@@ -397,6 +407,12 @@ function unlock(user){
   loadData();
 }
 
+function dismissBanner(){
+  var b=document.getElementById('pwBanner');
+  if(b) b.style.display='none';
+  try{ sessionStorage.removeItem('rcd_from_token'); }catch(e){}
+}
+
 function lock(){
   document.getElementById('gate').style.display='flex';
   document.getElementById('appShell').style.display='none';
@@ -411,25 +427,36 @@ function lock(){
   var isConfirm  = h.indexOf('confirmation_token=')>-1;
   if(isInvite||isRecovery||isConfirm){
     CAME_FROM_TOKEN=true;
+    try{ sessionStorage.setItem('rcd_from_token','1'); }catch(e){}
     gateMsg('Setting up your account…');
-    var tries=0;
-    var t=setInterval(function(){
-      tries++;
-      if(window.netlifyIdentity){
-        clearInterval(t);
-        if(isInvite) netlifyIdentity.open('signup');
-        else if(isRecovery) netlifyIdentity.open();
-      } else if(tries>40){
-        clearInterval(t);
-        gateMsg('Could not start the sign-in service. Please reload the page.','warn');
-      }
-    },200);
+    // Only INVITE needs the widget opened (to collect a password).
+    // Recovery/confirmation tokens authenticate automatically — opening the
+    // widget on top of that leaves an invisible overlay that blocks clicks.
+    if(isInvite){
+      var tries=0;
+      var t=setInterval(function(){
+        tries++;
+        if(window.netlifyIdentity){ clearInterval(t); netlifyIdentity.open('signup'); }
+        else if(tries>40){ clearInterval(t); gateMsg('Could not start the sign-in service. Please reload the page.','warn'); }
+      },200);
+    }
+  } else {
+    // Persist the "no password yet" flag across the refresh that Identity triggers
+    try{ if(sessionStorage.getItem('rcd_from_token')==='1') CAME_FROM_TOKEN=true; }catch(e){}
   }
 })();
 
 if(window.netlifyIdentity){
   netlifyIdentity.on('init', user => { if(user) unlock(user); else lock(); });
-  netlifyIdentity.on('login', user => { unlock(user); netlifyIdentity.close(); });
+  netlifyIdentity.on('login', user => {
+    unlock(user);
+    try{ netlifyIdentity.close(); }catch(e){}
+    // belt-and-braces: clear any leftover modal overlay that can block clicks
+    setTimeout(function(){
+      var w=document.getElementById('netlify-identity-widget');
+      if(w && !w.dataset.keep){ w.style.pointerEvents='none'; }
+    },400);
+  });
   netlifyIdentity.on('logout', () => { location.reload(); });
   netlifyIdentity.on('error', err => {
     console.error('Identity error:', err);
