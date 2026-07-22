@@ -77,33 +77,30 @@
   .toolbar label{font-size:12px;color:var(--slate);font-weight:600}
 
   /* ---------- LOGIN GATE ---------- */
-  #gate{position:fixed;inset:0;background:linear-gradient(135deg,#0f2942,#1c3d5a);display:flex;align-items:center;justify-content:center;z-index:10;padding:24px}
-  #gate .card{background:#fff;border-radius:16px;padding:38px 42px;max-width:460px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.35);text-align:center}
-  #gate .kick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8a04a;font-weight:700}
-  #gate h1{font-size:23px;font-weight:800;color:#0f2942;margin:8px 0 6px}
-  #gate p{font-size:14px;color:#5a6b7b;line-height:1.55;margin-bottom:20px}
-  #gate button.primary{background:#0f2942;color:#fff;border:0;border-radius:10px;padding:13px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+  #gate{position:fixed;inset:0;background:linear-gradient(135deg,#0f2942,#1c3d5a);display:flex;align-items:center;justify-content:center;z-index:9999;padding:24px}
+  #gate .card{background:#fff;border-radius:16px;padding:36px 40px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+  #gate .kick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c8a04a;font-weight:700;text-align:center}
+  #gate h1{font-size:23px;font-weight:800;color:#0f2942;margin:8px 0 6px;text-align:center}
+  #gate .sub{font-size:14px;color:#5a6b7b;line-height:1.55;margin-bottom:22px;text-align:center}
+  #gate label{display:block;font-size:12px;font-weight:700;color:#5a6b7b;text-transform:uppercase;letter-spacing:.5px;margin:14px 0 6px}
+  #gate input{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8e0e8;border-radius:9px;font-size:15px;font-family:inherit;color:#1a2530}
+  #gate input:focus{outline:none;border-color:#0f2942}
+  #gate button.primary{width:100%;margin-top:18px;background:#0f2942;color:#fff;border:0;border-radius:10px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
   #gate button.primary:hover{background:#1c3d5a}
-  #gate .note{font-size:12px;color:#94a3b0;margin-top:16px;line-height:1.5}
-  #gate .status{display:none;font-size:13px;padding:11px 14px;border-radius:9px;margin-bottom:16px;line-height:1.5}
-  #gate .status.info{display:block;background:#e6f2ec;color:#2e7d5b;border:1px solid #bfe3d0}
-  #gate .status.warn{display:block;background:#fbeee9;color:#c25a3a;border:1px solid #f0cdc0}
+  #gate button.primary:disabled{opacity:.6;cursor:default}
+  #gate .link{display:block;text-align:center;margin-top:14px;font-size:13px;color:#5a6b7b;background:none;border:0;cursor:pointer;font-family:inherit;text-decoration:underline;width:100%}
+  #gate .msg{display:none;font-size:13px;padding:11px 14px;border-radius:9px;margin-top:16px;line-height:1.5}
+  #gate .msg.info{display:block;background:#e6f2ec;color:#2e7d5b;border:1px solid #bfe3d0}
+  #gate .msg.warn{display:block;background:#fbeee9;color:#c25a3a;border:1px solid #f0cdc0}
+  #gate .note{font-size:12px;color:#94a3b0;text-align:center;margin-top:18px;line-height:1.5}
   body.locked{overflow:hidden}
   #appShell{display:none}
-  #netlify-identity-widget{z-index:99999 !important;position:relative}
-  .netlify-identity-modal,[class*="netlify-identity"]{z-index:99999 !important}
-  /* top bar when signed in */
   #logoutBar{display:none;justify-content:flex-end;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
   #logoutBar .who{font-size:12px;color:#5a6b7b}
   #logoutBar button{background:#fff;border:1px solid #e2e8ee;color:#0f2942;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
   #logoutBar button:hover{background:#f4f6f9}
-  #logoutBar button.accent{background:#c8a04a;border-color:#c8a04a;color:#fff}
-  /* first-run banner prompting password creation */
-  #pwBanner{display:none;background:#faf1dd;border:1px solid #e8d4a0;border-left:4px solid #c9962e;border-radius:10px;padding:13px 16px;margin-bottom:16px;font-size:13.5px;color:#1a2530;line-height:1.55}
-  #pwBanner b{color:#c9962e}
-  #pwBanner button{margin-left:10px;background:#0f2942;color:#fff;border:0;border-radius:7px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
 </style>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="locked">
 
@@ -111,23 +108,45 @@
 <div id="gate">
   <div class="card">
     <div class="kick">Rental Confidence Dashboard</div>
-    <h1>Sign in to continue</h1>
-    <p>This dashboard contains confidential market data and is available to invited users only.</p>
-    <div class="status" id="gateStatus"></div>
-    <button class="primary" id="loginBtn" onclick="doLogin()">Log in</button>
-    <div class="note">Access is by invitation.<br>First time here? Use the invite link in your email, or click Log in then <b>&ldquo;Forgot password?&rdquo;</b> to set your password.</div>
+    <h1 id="gateTitle">Sign in to continue</h1>
+    <div class="sub" id="gateSub">This dashboard contains confidential market data and is available to invited users only.</div>
+
+    <!-- LOGIN VIEW -->
+    <div id="viewLogin">
+      <label>Email</label>
+      <input id="loginEmail" type="email" autocomplete="username" placeholder="you@example.com">
+      <label>Password</label>
+      <input id="loginPass" type="password" autocomplete="current-password" placeholder="Your password">
+      <button class="primary" id="loginBtn" onclick="doLogin()">Log in</button>
+      <button class="link" onclick="showReset()">Forgot / set your password?</button>
+    </div>
+
+    <!-- RESET-REQUEST VIEW -->
+    <div id="viewReset" style="display:none">
+      <div class="sub">Enter your email and we&rsquo;ll send you a link to set a new password.</div>
+      <label>Email</label>
+      <input id="resetEmail" type="email" autocomplete="username" placeholder="you@example.com">
+      <button class="primary" id="resetBtn" onclick="doResetRequest()">Send reset link</button>
+      <button class="link" onclick="showLogin()">Back to log in</button>
+    </div>
+
+    <!-- SET-NEW-PASSWORD VIEW (after clicking email link) -->
+    <div id="viewNewPass" style="display:none">
+      <div class="sub">Choose a password for your account.</div>
+      <label>New password</label>
+      <input id="newPass" type="password" autocomplete="new-password" placeholder="At least 8 characters">
+      <button class="primary" id="newPassBtn" onclick="doSetPassword()">Set password &amp; continue</button>
+    </div>
+
+    <div class="msg" id="gateMsgBox"></div>
+    <div class="note">Access is by invitation. If you need an account, contact your administrator.</div>
   </div>
 </div>
 
 <div id="appShell">
 <div id="logoutBar">
   <span class="who" id="whoami"></span>
-  <button onclick="changePassword()">Set / change password</button>
-  <button onclick="netlifyIdentity.logout()">Log out</button>
-</div>
-<div id="pwBanner">
-  <b>Heads up.</b> You signed in through an email link, so you may not have a password set &mdash; meaning you&rsquo;d need a new email link next time. To set one, log out and use <b>&ldquo;Forgot password?&rdquo;</b> on the sign-in screen.
-  <button onclick="dismissBanner()">Got it</button>
+  <button onclick="doLogout()">Log out</button>
 </div>
 <div class="wrap">
   <div class="appbar">
@@ -343,130 +362,117 @@ function initSelectors(){
   document.getElementById('meta').textContent=`Data generated ${DATA.generated} · ${mkts.length} markets`;
 }
 
-// ================= AUTH =================
+// ================= SUPABASE AUTH =================
+const SUPABASE_URL="https://klvypzopgkszfdocffod.supabase.co";
+const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtsdnlwem9wZ2tzemZkb2NmZm9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NTU0NDAsImV4cCI6MjEwMDMzMTQ0MH0.S8EpwtwxNylZISxVa-107zZ7cvaIHUH83yKHa4xKASQ";
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 let DATA_LOADED=false;
 
-function gateMsg(text,kind){
-  const el=document.getElementById('gateStatus');
-  if(!el) return;
-  if(!text){ el.className='status'; el.textContent=''; return; }
-  el.className='status '+(kind||'info');
-  el.textContent=text;
+function msg(text,kind){
+  const b=document.getElementById('gateMsgBox');
+  if(!text){ b.className='msg'; b.textContent=''; return; }
+  b.className='msg '+(kind||'info'); b.textContent=text;
 }
+function showView(id){
+  ['viewLogin','viewReset','viewNewPass'].forEach(v=>{
+    document.getElementById(v).style.display = (v===id)?'block':'none';
+  });
+  msg('');
+}
+function showLogin(){ showView('viewLogin'); document.getElementById('gateTitle').textContent='Sign in to continue'; }
+function showReset(){ showView('viewReset'); document.getElementById('gateTitle').textContent='Reset your password'; }
+function showNewPass(){ showView('viewNewPass'); document.getElementById('gateTitle').textContent='Set your password'; }
 
 function loadData(){
-  if(DATA_LOADED) return;
-  DATA_LOADED=true;
+  if(DATA_LOADED) return; DATA_LOADED=true;
   fetch('data.json').then(r=>r.json()).then(d=>{
     DATA=d; initSelectors(); renderOwner(); renderMgr();
-  }).catch(e=>{
-    document.getElementById('meta').textContent='Could not load data.';
-  });
+  }).catch(e=>{ document.getElementById('meta').textContent='Could not load data.'; });
 }
-
-function doLogin(){
-  if(!window.netlifyIdentity){
-    gateMsg('Sign-in service is still loading. Please wait a moment and try again.','warn');
-    return;
-  }
-  openWidget('login');
-}
-
-// Opens the widget so the user can set/change their password
-function openWidget(view){
-  if(!window.netlifyIdentity) return;
-  var w=document.getElementById('netlify-identity-widget');
-  if(w){ w.style.pointerEvents='auto'; w.dataset.keep='1'; }
-  view ? netlifyIdentity.open(view) : netlifyIdentity.open();
-  setTimeout(function(){ if(w) delete w.dataset.keep; },1500);
-}
-// NOTE: Netlify's widget has no password-setting screen for an already
-// signed-in user. The only way to set a password is via a recovery email.
-function changePassword(){
-  if(!window.netlifyIdentity) return;
-  netlifyIdentity.logout();
-  setTimeout(function(){ openWidget(); }, 600);
-  alert('To set a password, Netlify requires you to use the “Forgot password?” link on the login screen. You will be signed out now so you can do that.');
-}
-
-// Track whether this session came from a recovery/invite link (means no password yet)
-let CAME_FROM_TOKEN=false;
-
-function unlock(user){
+function unlock(session){
   document.getElementById('gate').style.display='none';
   document.getElementById('appShell').style.display='block';
   document.getElementById('logoutBar').style.display='flex';
   document.body.classList.remove('locked');
-  const who=(user&&((user.user_metadata&&user.user_metadata.full_name)||user.email))||'';
-  document.getElementById('whoami').textContent=who?('Signed in as '+who):'';
-  // Prompt for password if this session started from a token link
-  if(CAME_FROM_TOKEN){
-    const b=document.getElementById('pwBanner');
-    if(b) b.style.display='block';
-  }
+  const email=session&&session.user&&session.user.email||'';
+  document.getElementById('whoami').textContent=email?('Signed in as '+email):'';
   loadData();
 }
-
-function dismissBanner(){
-  var b=document.getElementById('pwBanner');
-  if(b) b.style.display='none';
-  try{ sessionStorage.removeItem('rcd_from_token'); }catch(e){}
-}
-
 function lock(){
   document.getElementById('gate').style.display='flex';
   document.getElementById('appShell').style.display='none';
   document.body.classList.add('locked');
 }
 
-// ---- Handle tokens arriving in the URL hash (invite / recovery / confirmation) ----
-(function(){
-  var h = window.location.hash || '';
-  var isInvite   = h.indexOf('invite_token=')>-1;
-  var isRecovery = h.indexOf('recovery_token=')>-1;
-  var isConfirm  = h.indexOf('confirmation_token=')>-1;
-  if(isInvite||isRecovery||isConfirm){
-    CAME_FROM_TOKEN=true;
-    try{ sessionStorage.setItem('rcd_from_token','1'); }catch(e){}
-    gateMsg('Setting up your account…');
-    // Only INVITE needs the widget opened (to collect a password).
-    // Recovery/confirmation tokens authenticate automatically — opening the
-    // widget on top of that leaves an invisible overlay that blocks clicks.
-    if(isInvite){
-      var tries=0;
-      var t=setInterval(function(){
-        tries++;
-        if(window.netlifyIdentity){ clearInterval(t); netlifyIdentity.open('signup'); }
-        else if(tries>40){ clearInterval(t); gateMsg('Could not start the sign-in service. Please reload the page.','warn'); }
-      },200);
-    }
+async function doLogin(){
+  const email=document.getElementById('loginEmail').value.trim();
+  const pass=document.getElementById('loginPass').value;
+  if(!email||!pass){ msg('Please enter your email and password.','warn'); return; }
+  const btn=document.getElementById('loginBtn'); btn.disabled=true; msg('Signing in…');
+  const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
+  btn.disabled=false;
+  if(error){ msg(error.message||'Sign-in failed.','warn'); return; }
+  // onAuthStateChange will unlock
+}
+
+async function doResetRequest(){
+  const email=document.getElementById('resetEmail').value.trim();
+  if(!email){ msg('Please enter your email.','warn'); return; }
+  const btn=document.getElementById('resetBtn'); btn.disabled=true; msg('Sending…');
+  const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin+window.location.pathname});
+  btn.disabled=false;
+  if(error){ msg(error.message||'Could not send reset email.','warn'); return; }
+  msg('Check your email for a link to set your password.','info');
+}
+
+async function doSetPassword(){
+  const pass=document.getElementById('newPass').value;
+  if(!pass||pass.length<8){ msg('Password must be at least 8 characters.','warn'); return; }
+  const btn=document.getElementById('newPassBtn'); btn.disabled=true; msg('Saving…');
+  const {data,error}=await sb.auth.updateUser({password:pass});
+  btn.disabled=false;
+  if(error){ msg(error.message||'Could not set password.','warn'); return; }
+  msg('Password set! Loading your dashboard…','info');
+  // session already active -> unlock shortly
+  const {data:{session}}=await sb.auth.getSession();
+  if(session) unlock(session);
+}
+
+async function doLogout(){ await sb.auth.signOut(); location.reload(); }
+
+// React to auth state (login, token refresh, recovery link, etc.)
+sb.auth.onAuthStateChange((event, session) => {
+  if(event==='PASSWORD_RECOVERY'){
+    // user arrived via reset/invite email link -> let them set a password
+    lock(); showNewPass();
+    return;
+  }
+  if(session){ unlock(session); }
+  else { lock(); showLogin(); }
+});
+
+// Initial check on page load
+(async function(){
+  const {data:{session}}=await sb.auth.getSession();
+  // If the URL hash carries a recovery type, onAuthStateChange handles it.
+  const h=window.location.hash||'';
+  if(h.indexOf('type=recovery')>-1 || h.indexOf('type=invite')>-1){
+    showNewPass();
+  } else if(session){
+    unlock(session);
   } else {
-    // Persist the "no password yet" flag across the refresh that Identity triggers
-    try{ if(sessionStorage.getItem('rcd_from_token')==='1') CAME_FROM_TOKEN=true; }catch(e){}
+    lock(); showLogin();
   }
 })();
 
-if(window.netlifyIdentity){
-  netlifyIdentity.on('init', user => { if(user) unlock(user); else lock(); });
-  netlifyIdentity.on('login', user => {
-    unlock(user);
-    try{ netlifyIdentity.close(); }catch(e){}
-    // belt-and-braces: clear any leftover modal overlay that can block clicks
-    setTimeout(function(){
-      var w=document.getElementById('netlify-identity-widget');
-      if(w && !w.dataset.keep){ w.style.pointerEvents='none'; }
-    },400);
-  });
-  netlifyIdentity.on('logout', () => { location.reload(); });
-  netlifyIdentity.on('error', err => {
-    console.error('Identity error:', err);
-    gateMsg('Sign-in problem: '+(err&&err.message?err.message:'unknown error')+'. Try again, or use “Forgot password?”.','warn');
-  });
-  netlifyIdentity.init();
-} else {
-  lock();
-  gateMsg('Sign-in service failed to load. Check your connection and reload.','warn');
-}
+// Enter key submits the visible form
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter') return;
+  if(document.getElementById('viewLogin').style.display!=='none') doLogin();
+  else if(document.getElementById('viewReset').style.display!=='none') doResetRequest();
+  else if(document.getElementById('viewNewPass').style.display!=='none') doSetPassword();
+});
 </script>
 </div>
 </body>
