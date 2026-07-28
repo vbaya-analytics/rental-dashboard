@@ -1,1344 +1,4930 @@
 {
- "generated": "SAMPLE DATA \u2014 fictional, not real market figures",
- "months": [
-  "2026-02",
-  "2026-03",
-  "2026-04",
-  "2026-05",
-  "2026-06",
-  "2026-07"
- ],
- "latest": "2026-07",
- "markets": {
-  "Alpha-Studio": {
-   "2026-02": {
-    "avg": 1476.86,
-    "n": 5,
-    "median": 1403.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 1405.0,
-    "n": 12,
-    "median": 1401.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1425.81,
-    "n": 12,
-    "median": 1357.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1388.23,
-    "n": 9,
-    "median": 1320.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1380.15,
-    "n": 9,
-    "median": 1374.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1500.17,
-    "n": 5,
-    "median": 1496.0,
-    "confidence": "Medium"
-   }
-  },
-  "Alpha-1 Bd": {
-   "2026-02": {
-    "avg": 1877.27,
-    "n": 12,
-    "median": 1924.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 1887.11,
-    "n": 3,
-    "median": 1824.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 1771.02,
-    "n": 9,
-    "median": 1706.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1837.18,
-    "n": 7,
-    "median": 1846.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1816.51,
-    "n": 3,
-    "median": 1820.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 1684.63,
-    "n": 7,
-    "median": 1697.0,
-    "confidence": "High"
-   }
-  },
-  "Alpha-2 Bd": {
-   "2026-02": {
-    "avg": 2335.31,
-    "n": 12,
-    "median": 2344.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2473.32,
-    "n": 9,
-    "median": 2454.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 2394.2,
-    "n": 9,
-    "median": 2346.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 2480.76,
-    "n": 5,
-    "median": 2432.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 2405.37,
-    "n": 12,
-    "median": 2390.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 2512.12,
-    "n": 7,
-    "median": 2470.0,
-    "confidence": "High"
-   }
-  },
-  "Alpha-3 Bd": {
-   "2026-02": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-03": {
-    "avg": 3025.5,
-    "n": 4,
-    "median": 3044.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 3182.35,
-    "n": 1,
-    "median": 3157.0,
-    "confidence": "Low"
-   },
-   "2026-05": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-06": {
-    "avg": 3190.12,
-    "n": 4,
-    "median": 3224.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 3182.39,
-    "n": 2,
-    "median": 3148.0,
-    "confidence": "Low"
-   }
-  },
-  "Alpha-Houses": {
-   "2026-02": {
-    "avg": 3605.13,
-    "n": 3,
-    "median": 3537.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 3701.55,
-    "n": 2,
-    "median": 3708.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-05": {
-    "avg": 3754.12,
-    "n": 2,
-    "median": 3803.0,
-    "confidence": "Low"
-   },
-   "2026-06": {
-    "avg": 3681.61,
-    "n": 3,
-    "median": 3652.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 3631.22,
-    "n": 2,
-    "median": 3611.0,
-    "confidence": "Low"
-   }
-  },
-  "Bravo-Studio": {
-   "2026-02": {
-    "avg": 1498.61,
-    "n": 3,
-    "median": 1447.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 1401.06,
-    "n": 7,
-    "median": 1353.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1556.91,
-    "n": 9,
-    "median": 1541.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1436.63,
-    "n": 5,
-    "median": 1428.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 1500.66,
-    "n": 5,
-    "median": 1533.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 1458.43,
-    "n": 7,
-    "median": 1507.0,
-    "confidence": "High"
-   }
-  },
-  "Bravo-1 Bd": {
-   "2026-02": {
-    "avg": 2000.7,
-    "n": 9,
-    "median": 1940.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 1844.49,
-    "n": 5,
-    "median": 1850.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 1939.1,
-    "n": 3,
-    "median": 1936.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 1915.64,
-    "n": 7,
-    "median": 1855.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1956.05,
-    "n": 12,
-    "median": 1950.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 2047.93,
-    "n": 5,
-    "median": 2035.0,
-    "confidence": "Medium"
-   }
-  },
-  "Bravo-2 Bd": {
-   "2026-02": {
-    "avg": 2452.75,
-    "n": 16,
-    "median": 2432.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2481.85,
-    "n": 16,
-    "median": 2453.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 2409.35,
-    "n": 9,
-    "median": 2392.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 2352.65,
-    "n": 9,
-    "median": 2281.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 2452.22,
-    "n": 5,
-    "median": 2387.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 2383.16,
-    "n": 12,
-    "median": 2303.0,
-    "confidence": "High"
-   }
-  },
-  "Bravo-3 Bd": {
-   "2026-02": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-03": {
-    "avg": 3006.37,
-    "n": 2,
-    "median": 2936.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": 2987.78,
-    "n": 1,
-    "median": 2927.0,
-    "confidence": "Low"
-   },
-   "2026-05": {
-    "avg": 3044.24,
-    "n": 2,
-    "median": 3043.0,
-    "confidence": "Low"
-   },
-   "2026-06": {
-    "avg": 2842.4,
-    "n": 3,
-    "median": 2873.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 2902.41,
-    "n": 3,
-    "median": 2863.0,
-    "confidence": "Medium"
-   }
-  },
-  "Bravo-Houses": {
-   "2026-02": {
-    "avg": 3752.88,
-    "n": 2,
-    "median": 3735.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": 3684.4,
-    "n": 1,
-    "median": 3631.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": 3631.2,
-    "n": 4,
-    "median": 3641.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-06": {
-    "avg": 3578.81,
-    "n": 4,
-    "median": 3582.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   }
-  },
-  "Charlie-Studio": {
-   "2026-02": {
-    "avg": 1504.05,
-    "n": 7,
-    "median": 1542.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 1582.04,
-    "n": 7,
-    "median": 1571.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1506.96,
-    "n": 12,
-    "median": 1456.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1633.98,
-    "n": 5,
-    "median": 1660.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 1655.59,
-    "n": 16,
-    "median": 1602.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1579.3,
-    "n": 9,
-    "median": 1503.0,
-    "confidence": "High"
-   }
-  },
-  "Charlie-1 Bd": {
-   "2026-02": {
-    "avg": 1893.89,
-    "n": 7,
-    "median": 1839.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 1972.53,
-    "n": 12,
-    "median": 1951.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1951.56,
-    "n": 16,
-    "median": 1996.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1724.0,
-    "n": 7,
-    "median": 1657.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1721.66,
-    "n": 9,
-    "median": 1668.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1867.23,
-    "n": 12,
-    "median": 1867.0,
-    "confidence": "High"
-   }
-  },
-  "Charlie-2 Bd": {
-   "2026-02": {
-    "avg": 2365.68,
-    "n": 16,
-    "median": 2369.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2286.52,
-    "n": 16,
-    "median": 2257.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 2395.32,
-    "n": 16,
-    "median": 2377.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 2295.89,
-    "n": 5,
-    "median": 2299.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 2346.75,
-    "n": 3,
-    "median": 2393.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 2242.61,
-    "n": 9,
-    "median": 2259.0,
-    "confidence": "High"
-   }
-  },
-  "Charlie-3 Bd": {
-   "2026-02": {
-    "avg": 2927.4,
-    "n": 1,
-    "median": 2864.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": 2996.35,
-    "n": 1,
-    "median": 2977.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": 2977.28,
-    "n": 1,
-    "median": 2975.0,
-    "confidence": "Low"
-   },
-   "2026-05": {
-    "avg": 2963.71,
-    "n": 3,
-    "median": 2929.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 2916.1,
-    "n": 4,
-    "median": 2839.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   }
-  },
-  "Charlie-Houses": {
-   "2026-02": {
-    "avg": 3685.44,
-    "n": 1,
-    "median": 3719.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": 3605.65,
-    "n": 1,
-    "median": 3553.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": 3661.91,
-    "n": 4,
-    "median": 3658.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 3738.24,
-    "n": 2,
-    "median": 3767.0,
-    "confidence": "Low"
-   },
-   "2026-06": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-07": {
-    "avg": 3834.96,
-    "n": 2,
-    "median": 3841.0,
-    "confidence": "Low"
-   }
-  },
-  "Delta-Studio": {
-   "2026-02": {
-    "avg": 1482.54,
-    "n": 12,
-    "median": 1522.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 1449.9,
-    "n": 12,
-    "median": 1390.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1456.37,
-    "n": 12,
-    "median": 1434.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1617.27,
-    "n": 5,
-    "median": 1638.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 1552.43,
-    "n": 5,
-    "median": 1534.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 1572.12,
-    "n": 16,
-    "median": 1500.0,
-    "confidence": "High"
-   }
-  },
-  "Delta-1 Bd": {
-   "2026-02": {
-    "avg": 1912.2,
-    "n": 12,
-    "median": 1934.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2005.48,
-    "n": 3,
-    "median": 1933.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 1893.27,
-    "n": 5,
-    "median": 1914.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 1953.0,
-    "n": 12,
-    "median": 1877.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1972.21,
-    "n": 3,
-    "median": 1972.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 2029.22,
-    "n": 12,
-    "median": 1975.0,
-    "confidence": "High"
-   }
-  },
-  "Delta-2 Bd": {
-   "2026-02": {
-    "avg": 2407.32,
-    "n": 12,
-    "median": 2389.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2434.62,
-    "n": 5,
-    "median": 2469.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 2474.59,
-    "n": 7,
-    "median": 2511.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 2447.17,
-    "n": 5,
-    "median": 2385.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 2339.48,
-    "n": 3,
-    "median": 2301.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 2296.89,
-    "n": 16,
-    "median": 2226.0,
-    "confidence": "High"
-   }
-  },
-  "Delta-3 Bd": {
-   "2026-02": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-03": {
-    "avg": 3116.9,
-    "n": 1,
-    "median": 3121.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": 2961.88,
-    "n": 2,
-    "median": 2997.0,
-    "confidence": "Low"
-   },
-   "2026-05": {
-    "avg": 2998.94,
-    "n": 3,
-    "median": 3043.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 3165.53,
-    "n": 3,
-    "median": 3107.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 3026.57,
-    "n": 1,
-    "median": 3003.0,
-    "confidence": "Low"
-   }
-  },
-  "Delta-Houses": {
-   "2026-02": {
-    "avg": 3682.68,
-    "n": 2,
-    "median": 3649.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-04": {
-    "avg": 3611.63,
-    "n": 2,
-    "median": 3604.0,
-    "confidence": "Low"
-   },
-   "2026-05": {
-    "avg": 3770.7,
-    "n": 3,
-    "median": 3741.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 3761.95,
-    "n": 4,
-    "median": 3749.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   }
-  },
-  "Echo-Studio": {
-   "2026-02": {
-    "avg": 1603.77,
-    "n": 5,
-    "median": 1537.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 1428.29,
-    "n": 7,
-    "median": 1466.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1406.43,
-    "n": 5,
-    "median": 1343.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 1512.3,
-    "n": 9,
-    "median": 1520.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1393.16,
-    "n": 7,
-    "median": 1383.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1407.85,
-    "n": 12,
-    "median": 1419.0,
-    "confidence": "High"
-   }
-  },
-  "Echo-1 Bd": {
-   "2026-02": {
-    "avg": 1965.91,
-    "n": 3,
-    "median": 1910.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 1825.87,
-    "n": 3,
-    "median": 1748.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 1919.78,
-    "n": 3,
-    "median": 1851.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 1734.79,
-    "n": 5,
-    "median": 1767.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 1699.38,
-    "n": 9,
-    "median": 1749.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1877.42,
-    "n": 9,
-    "median": 1832.0,
-    "confidence": "High"
-   }
-  },
-  "Echo-2 Bd": {
-   "2026-02": {
-    "avg": 2446.1,
-    "n": 12,
-    "median": 2488.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2327.31,
-    "n": 5,
-    "median": 2271.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 2387.69,
-    "n": 7,
-    "median": 2377.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 2292.87,
-    "n": 5,
-    "median": 2278.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 2268.28,
-    "n": 5,
-    "median": 2293.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 2196.59,
-    "n": 7,
-    "median": 2119.0,
-    "confidence": "High"
-   }
-  },
-  "Echo-3 Bd": {
-   "2026-02": {
-    "avg": 3003.13,
-    "n": 1,
-    "median": 2955.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": 2921.31,
-    "n": 3,
-    "median": 2948.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 3050.28,
-    "n": 3,
-    "median": 3041.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 3127.24,
-    "n": 3,
-    "median": 3087.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 3137.83,
-    "n": 1,
-    "median": 3102.0,
-    "confidence": "Low"
-   },
-   "2026-07": {
-    "avg": 3018.65,
-    "n": 1,
-    "median": 2984.0,
-    "confidence": "Low"
-   }
-  },
-  "Echo-Houses": {
-   "2026-02": {
-    "avg": 3593.14,
-    "n": 1,
-    "median": 3594.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": 3658.84,
-    "n": 2,
-    "median": 3586.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": 3729.68,
-    "n": 3,
-    "median": 3737.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 3643.97,
-    "n": 2,
-    "median": 3654.0,
-    "confidence": "Low"
-   },
-   "2026-06": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-07": {
-    "avg": 3501.17,
-    "n": 3,
-    "median": 3456.0,
-    "confidence": "Medium"
-   }
-  },
-  "Foxtrot-Studio": {
-   "2026-02": {
-    "avg": 1601.59,
-    "n": 7,
-    "median": 1648.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 1431.45,
-    "n": 12,
-    "median": 1356.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1378.47,
-    "n": 7,
-    "median": 1322.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1384.77,
-    "n": 7,
-    "median": 1366.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1415.41,
-    "n": 12,
-    "median": 1368.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1261.35,
-    "n": 3,
-    "median": 1288.0,
-    "confidence": "Medium"
-   }
-  },
-  "Foxtrot-1 Bd": {
-   "2026-02": {
-    "avg": 1799.17,
-    "n": 12,
-    "median": 1722.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 1909.32,
-    "n": 7,
-    "median": 1840.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1939.29,
-    "n": 12,
-    "median": 1879.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1904.86,
-    "n": 16,
-    "median": 1902.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1871.71,
-    "n": 7,
-    "median": 1856.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1853.26,
-    "n": 7,
-    "median": 1857.0,
-    "confidence": "High"
-   }
-  },
-  "Foxtrot-2 Bd": {
-   "2026-02": {
-    "avg": 2486.23,
-    "n": 16,
-    "median": 2488.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2417.52,
-    "n": 16,
-    "median": 2403.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 2402.2,
-    "n": 12,
-    "median": 2396.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 2391.66,
-    "n": 3,
-    "median": 2388.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": 2333.37,
-    "n": 16,
-    "median": 2344.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 2175.14,
-    "n": 5,
-    "median": 2101.0,
-    "confidence": "Medium"
-   }
-  },
-  "Foxtrot-3 Bd": {
-   "2026-02": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-03": {
-    "avg": 3091.66,
-    "n": 3,
-    "median": 3084.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-05": {
-    "avg": 3093.1,
-    "n": 4,
-    "median": 3077.0,
-    "confidence": "Medium"
-   },
-   "2026-06": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-07": {
-    "avg": 3154.41,
-    "n": 3,
-    "median": 3172.0,
-    "confidence": "Medium"
-   }
-  },
-  "Foxtrot-Houses": {
-   "2026-02": {
-    "avg": 3610.23,
-    "n": 4,
-    "median": 3599.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 3653.21,
-    "n": 3,
-    "median": 3583.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": 3657.1,
-    "n": 2,
-    "median": 3675.0,
-    "confidence": "Low"
-   },
-   "2026-05": {
-    "avg": 3775.93,
-    "n": 1,
-    "median": 3823.0,
-    "confidence": "Low"
-   },
-   "2026-06": {
-    "avg": 3806.91,
-    "n": 3,
-    "median": 3737.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 3797.35,
-    "n": 2,
-    "median": 3798.0,
-    "confidence": "Low"
-   }
-  },
-  "Golf-Studio": {
-   "2026-02": {
-    "avg": 1521.94,
-    "n": 3,
-    "median": 1485.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 1571.72,
-    "n": 16,
-    "median": 1531.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1455.77,
-    "n": 12,
-    "median": 1438.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 1503.75,
-    "n": 9,
-    "median": 1511.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1510.72,
-    "n": 16,
-    "median": 1494.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1594.67,
-    "n": 16,
-    "median": 1575.0,
-    "confidence": "High"
-   }
-  },
-  "Golf-1 Bd": {
-   "2026-02": {
-    "avg": 2008.53,
-    "n": 3,
-    "median": 2000.0,
-    "confidence": "Medium"
-   },
-   "2026-03": {
-    "avg": 2010.16,
-    "n": 7,
-    "median": 2052.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 1863.66,
-    "n": 3,
-    "median": 1794.0,
-    "confidence": "Medium"
-   },
-   "2026-05": {
-    "avg": 2017.91,
-    "n": 12,
-    "median": 1996.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 1895.01,
-    "n": 7,
-    "median": 1934.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 1831.29,
-    "n": 5,
-    "median": 1763.0,
-    "confidence": "Medium"
-   }
-  },
-  "Golf-2 Bd": {
-   "2026-02": {
-    "avg": 2499.6,
-    "n": 7,
-    "median": 2437.0,
-    "confidence": "High"
-   },
-   "2026-03": {
-    "avg": 2427.99,
-    "n": 16,
-    "median": 2463.0,
-    "confidence": "High"
-   },
-   "2026-04": {
-    "avg": 2422.46,
-    "n": 16,
-    "median": 2407.0,
-    "confidence": "High"
-   },
-   "2026-05": {
-    "avg": 2454.88,
-    "n": 9,
-    "median": 2396.0,
-    "confidence": "High"
-   },
-   "2026-06": {
-    "avg": 2544.2,
-    "n": 9,
-    "median": 2517.0,
-    "confidence": "High"
-   },
-   "2026-07": {
-    "avg": 2451.26,
-    "n": 16,
-    "median": 2416.0,
-    "confidence": "High"
-   }
-  },
-  "Golf-3 Bd": {
-   "2026-02": {
-    "avg": 2890.38,
-    "n": 2,
-    "median": 2908.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": 2910.11,
-    "n": 3,
-    "median": 2951.0,
-    "confidence": "Medium"
-   },
-   "2026-04": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-05": {
-    "avg": 2926.82,
-    "n": 2,
-    "median": 2855.0,
-    "confidence": "Low"
-   },
-   "2026-06": {
-    "avg": 3084.56,
-    "n": 3,
-    "median": 3081.0,
-    "confidence": "Medium"
-   },
-   "2026-07": {
-    "avg": 3062.12,
-    "n": 2,
-    "median": 3080.0,
-    "confidence": "Low"
-   }
-  },
-  "Golf-Houses": {
-   "2026-02": {
-    "avg": 3612.38,
-    "n": 2,
-    "median": 3641.0,
-    "confidence": "Low"
-   },
-   "2026-03": {
-    "avg": 3763.76,
-    "n": 2,
-    "median": 3703.0,
-    "confidence": "Low"
-   },
-   "2026-04": {
-    "avg": 3754.11,
-    "n": 2,
-    "median": 3715.0,
-    "confidence": "Low"
-   },
-   "2026-05": {
-    "avg": 3864.94,
-    "n": 2,
-    "median": 3841.0,
-    "confidence": "Low"
-   },
-   "2026-06": {
-    "avg": null,
-    "n": 0,
-    "median": null,
-    "confidence": "Estimated"
-   },
-   "2026-07": {
-    "avg": 3961.3,
-    "n": 3,
-    "median": 4004.0,
-    "confidence": "Medium"
-   }
+  "generated": "July 2026 \u00b7 Vancouver Island Rental Market",
+  "months": [
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10",
+    "2026-11",
+    "2026-12"
+  ],
+  "markets": {
+    "Vic-Studio": {
+      "2026-01": {
+        "avg": 1603.8,
+        "n": 5,
+        "median": 1628,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 1524,
+        "n": 5,
+        "median": 1628,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 1625.08,
+        "n": 6,
+        "median": 1614.5,
+        "confidence": "High"
+      },
+      "2026-04": {
+        "avg": 1570.33,
+        "n": 6,
+        "median": 1618.5,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 1643.88,
+        "n": 8,
+        "median": 1625,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 1597.25,
+        "n": 4,
+        "median": 1652,
+        "confidence": "Medium"
+      },
+      "2026-07": {
+        "avg": 1683.83,
+        "n": 6,
+        "median": 1697,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1664,
+        "n": 5,
+        "median": 1700,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 1653.89,
+        "n": 9,
+        "median": 1610,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 1637.86,
+        "n": 7,
+        "median": 1695,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 1692.75,
+        "n": 8,
+        "median": 1672,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 1611.25,
+        "n": 4,
+        "median": 1597.5,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 1673.33,
+        "n": 12,
+        "median": 1750,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 1578,
+        "n": 5,
+        "median": 1575,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 1641,
+        "n": 5,
+        "median": 1650,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 1683,
+        "n": 5,
+        "median": 1650,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 1694.6,
+        "n": 5,
+        "median": 1640,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 1603,
+        "n": 5,
+        "median": 1616,
+        "confidence": "Medium"
+      }
+    },
+    "Vic-1 Bd": {
+      "2026-01": {
+        "avg": 1824.88,
+        "n": 8,
+        "median": 1815,
+        "confidence": "High"
+      },
+      "2026-02": {
+        "avg": 1830,
+        "n": 6,
+        "median": 1815,
+        "confidence": "High"
+      },
+      "2026-03": {
+        "avg": 1931.06,
+        "n": 8,
+        "median": 1928.25,
+        "confidence": "High"
+      },
+      "2026-04": {
+        "avg": 1983.62,
+        "n": 8,
+        "median": 1945,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 1916.88,
+        "n": 8,
+        "median": 1842.5,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 1911.88,
+        "n": 8,
+        "median": 1962.5,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 1906.44,
+        "n": 9,
+        "median": 1900,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1884.4,
+        "n": 10,
+        "median": 1875,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 1745,
+        "n": 6,
+        "median": 1745,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 1908.57,
+        "n": 7,
+        "median": 1850,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2063.14,
+        "n": 10,
+        "median": 2020,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 1978.12,
+        "n": 8,
+        "median": 1852.5,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 1902.14,
+        "n": 7,
+        "median": 1825,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 2035.71,
+        "n": 7,
+        "median": 1980,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 1939.88,
+        "n": 8,
+        "median": 1937.5,
+        "confidence": "High"
+      },
+      "2025-10": {
+        "avg": 2088.71,
+        "n": 7,
+        "median": 2016,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 1814.2,
+        "n": 5,
+        "median": 1845,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 2038.86,
+        "n": 7,
+        "median": 2040,
+        "confidence": "High"
+      }
+    },
+    "Vic-2 Bd": {
+      "2026-01": {
+        "avg": 2248,
+        "n": 5,
+        "median": 2100,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 2272,
+        "n": 5,
+        "median": 2100,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 2428.6,
+        "n": 5,
+        "median": 2399,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 2408.33,
+        "n": 6,
+        "median": 2440,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 2574.29,
+        "n": 7,
+        "median": 2475,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 2276.43,
+        "n": 7,
+        "median": 2295,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 2451.44,
+        "n": 9,
+        "median": 2450,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 2572.5,
+        "n": 14,
+        "median": 2450,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 2397.5,
+        "n": 8,
+        "median": 2297.5,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 2361.88,
+        "n": 8,
+        "median": 2297.5,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2826.43,
+        "n": 7,
+        "median": 2795,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 2711.25,
+        "n": 8,
+        "median": 2735,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 2444.25,
+        "n": 8,
+        "median": 2420,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 2335,
+        "n": 7,
+        "median": 2250,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 2370.33,
+        "n": 6,
+        "median": 2408.5,
+        "confidence": "High"
+      },
+      "2025-10": {
+        "avg": 2553.33,
+        "n": 6,
+        "median": 2560,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 2387.4,
+        "n": 5,
+        "median": 2395,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 2449.12,
+        "n": 8,
+        "median": 2445,
+        "confidence": "High"
+      }
+    },
+    "Vic-3 Bd": {
+      "2026-01": {
+        "avg": 3450,
+        "n": 1,
+        "median": 3450,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": 2924.5,
+        "n": 2,
+        "median": 3450,
+        "confidence": "Low"
+      },
+      "2026-03": {
+        "avg": 3119.33,
+        "n": 3,
+        "median": 3249,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 3148.75,
+        "n": 4,
+        "median": 3245,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 2897.5,
+        "n": 4,
+        "median": 2897.5,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": 3795,
+        "n": 1,
+        "median": 3795,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 3209,
+        "n": 5,
+        "median": 3200,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 3500,
+        "n": 3,
+        "median": 3200,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 3500,
+        "n": 3,
+        "median": 3200,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 3719.8,
+        "n": 5,
+        "median": 3350,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 4263.33,
+        "n": 3,
+        "median": 4295,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 3250,
+        "n": 2,
+        "median": 3250,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": 3700,
+        "n": 1,
+        "median": 3700,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": 3300,
+        "n": 1,
+        "median": 3300,
+        "confidence": "Low"
+      },
+      "2025-09": {
+        "avg": 3378.5,
+        "n": 4,
+        "median": 3457,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 3350,
+        "n": 1,
+        "median": 3350,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": 3124.5,
+        "n": 4,
+        "median": 3074,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 2849.33,
+        "n": 3,
+        "median": 2749,
+        "confidence": "Medium"
+      }
+    },
+    "Vic-Houses": {
+      "2026-01": {
+        "avg": 2500,
+        "n": 3,
+        "median": 2500,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 4195,
+        "n": 1,
+        "median": 2500,
+        "confidence": "Low"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-07": {
+        "avg": 3798.33,
+        "n": 3,
+        "median": 3400,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 5143.75,
+        "n": 8,
+        "median": 4500,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 4354.55,
+        "n": 11,
+        "median": 4000,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 4187.25,
+        "n": 4,
+        "median": 4249.5,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 3356.43,
+        "n": 7,
+        "median": 2800,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 3750,
+        "n": 1,
+        "median": 3750,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": 3487.5,
+        "n": 4,
+        "median": 3625,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 4200,
+        "n": 2,
+        "median": 4200,
+        "confidence": "Low"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": 3930,
+        "n": 3,
+        "median": 3500,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Saa-Studio": {
+      "2026-01": {
+        "avg": 1647.67,
+        "n": 3,
+        "median": 1649,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 1573.6,
+        "n": 5,
+        "median": 1649,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 1740.25,
+        "n": 4,
+        "median": 1743,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 1647.25,
+        "n": 4,
+        "median": 1637,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 1842.67,
+        "n": 6,
+        "median": 1853.5,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 1684.75,
+        "n": 4,
+        "median": 1695,
+        "confidence": "Medium"
+      },
+      "2026-07": {
+        "avg": 1681.33,
+        "n": 6,
+        "median": 1674.5,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1566.67,
+        "n": 3,
+        "median": 1750,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 1685.75,
+        "n": 4,
+        "median": 1671.5,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 1736.29,
+        "n": 7,
+        "median": 1700,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 1736.4,
+        "n": 5,
+        "median": 1725,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 1650.8,
+        "n": 5,
+        "median": 1650,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 1759.25,
+        "n": 4,
+        "median": 1806.5,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 1762,
+        "n": 5,
+        "median": 1790,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 1608.75,
+        "n": 4,
+        "median": 1612,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 1671.5,
+        "n": 4,
+        "median": 1674.5,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 1663,
+        "n": 3,
+        "median": 1699,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 1604.33,
+        "n": 3,
+        "median": 1599,
+        "confidence": "Medium"
+      }
+    },
+    "Saa-1 Bd": {
+      "2026-01": {
+        "avg": 1940.5,
+        "n": 6,
+        "median": 1937,
+        "confidence": "High"
+      },
+      "2026-02": {
+        "avg": 1792.25,
+        "n": 8,
+        "median": 1937,
+        "confidence": "High"
+      },
+      "2026-03": {
+        "avg": 1847.62,
+        "n": 8,
+        "median": 1822.5,
+        "confidence": "High"
+      },
+      "2026-04": {
+        "avg": 2007.38,
+        "n": 8,
+        "median": 1955,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 1957.67,
+        "n": 6,
+        "median": 1854.5,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 1848,
+        "n": 6,
+        "median": 1849,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 1971.5,
+        "n": 8,
+        "median": 1922,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1987.33,
+        "n": 6,
+        "median": 1887.5,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 2006.17,
+        "n": 12,
+        "median": 2010,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 1885.43,
+        "n": 7,
+        "median": 1850,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2017.9,
+        "n": 10,
+        "median": 2000,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 2022.25,
+        "n": 8,
+        "median": 1977.5,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 1996.43,
+        "n": 7,
+        "median": 1966,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 1985,
+        "n": 8,
+        "median": 1997.5,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 2108.5,
+        "n": 8,
+        "median": 2091.5,
+        "confidence": "High"
+      },
+      "2025-10": {
+        "avg": 2115.67,
+        "n": 9,
+        "median": 2250,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 1970.62,
+        "n": 8,
+        "median": 1947,
+        "confidence": "High"
+      },
+      "2025-12": {
+        "avg": 1884.38,
+        "n": 8,
+        "median": 1838,
+        "confidence": "High"
+      }
+    },
+    "Saa-2 Bd": {
+      "2026-01": {
+        "avg": 2267.5,
+        "n": 4,
+        "median": 2235,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 2207.2,
+        "n": 5,
+        "median": 2235,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 2328.17,
+        "n": 6,
+        "median": 2274.5,
+        "confidence": "High"
+      },
+      "2026-04": {
+        "avg": 2380.17,
+        "n": 6,
+        "median": 2402.5,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 2277.18,
+        "n": 11,
+        "median": 2346,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 2212.67,
+        "n": 6,
+        "median": 2239,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 2460.86,
+        "n": 7,
+        "median": 2399,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 2508,
+        "n": 7,
+        "median": 2495,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 2565.5,
+        "n": 10,
+        "median": 2525,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 2357.86,
+        "n": 7,
+        "median": 2325,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2540.3,
+        "n": 10,
+        "median": 2440,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 2310.62,
+        "n": 8,
+        "median": 2372.5,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 2690,
+        "n": 8,
+        "median": 2588.5,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 2399.29,
+        "n": 7,
+        "median": 2395,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 2293.83,
+        "n": 6,
+        "median": 2287,
+        "confidence": "High"
+      },
+      "2025-10": {
+        "avg": 2429.57,
+        "n": 7,
+        "median": 2499,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 2469.2,
+        "n": 5,
+        "median": 2544,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 2320.8,
+        "n": 5,
+        "median": 2199,
+        "confidence": "Medium"
+      }
+    },
+    "Saa-3 Bd": {
+      "2026-01": {
+        "avg": 2970.75,
+        "n": 4,
+        "median": 2935,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 3094,
+        "n": 5,
+        "median": 2935,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 3271.25,
+        "n": 4,
+        "median": 3256.5,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 2972.5,
+        "n": 2,
+        "median": 2972.5,
+        "confidence": "Low"
+      },
+      "2026-05": {
+        "avg": 3183,
+        "n": 3,
+        "median": 3199,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": 2924.5,
+        "n": 2,
+        "median": 2924.5,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 2994,
+        "n": 2,
+        "median": 2994,
+        "confidence": "Low"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 3125,
+        "n": 4,
+        "median": 3200,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 3443.75,
+        "n": 4,
+        "median": 3450,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 3598.33,
+        "n": 3,
+        "median": 3000,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 3714.67,
+        "n": 3,
+        "median": 3600,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 3521.25,
+        "n": 4,
+        "median": 3475,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 3000,
+        "n": 1,
+        "median": 3000,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": 3418.33,
+        "n": 3,
+        "median": 3700,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 2595,
+        "n": 1,
+        "median": 2595,
+        "confidence": "Low"
+      },
+      "2025-10": {
+        "avg": 2874,
+        "n": 3,
+        "median": 2694,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 3041,
+        "n": 2,
+        "median": 3041,
+        "confidence": "Low"
+      },
+      "2025-12": {
+        "avg": 3108.25,
+        "n": 4,
+        "median": 3100,
+        "confidence": "Medium"
+      }
+    },
+    "Saa-Houses": {
+      "2026-01": {
+        "avg": 2595,
+        "n": 1,
+        "median": 2595,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": null,
+        "n": 0,
+        "median": 2595,
+        "confidence": "Estimated"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": 5295,
+        "n": 1,
+        "median": 5295,
+        "confidence": "Low"
+      },
+      "2026-06": {
+        "avg": 3450,
+        "n": 1,
+        "median": 3450,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 3520,
+        "n": 4,
+        "median": 3490,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 4141.67,
+        "n": 9,
+        "median": 4000,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 3545,
+        "n": 2,
+        "median": 3545,
+        "confidence": "Low"
+      },
+      "2025-04": {
+        "avg": 3600,
+        "n": 1,
+        "median": 3600,
+        "confidence": "Low"
+      },
+      "2025-05": {
+        "avg": 3100,
+        "n": 3,
+        "median": 3000,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": 3591.67,
+        "n": 3,
+        "median": 3500,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 2950,
+        "n": 2,
+        "median": 2950,
+        "confidence": "Low"
+      },
+      "2025-09": {
+        "avg": 3196.67,
+        "n": 3,
+        "median": 2590,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 4050,
+        "n": 2,
+        "median": 4050,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Esq/Vic-W-Studio": {
+      "2026-01": {
+        "avg": 1737.5,
+        "n": 4,
+        "median": 1763,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 1753,
+        "n": 3,
+        "median": 1763,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 1703.25,
+        "n": 4,
+        "median": 1669.5,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 1762,
+        "n": 4,
+        "median": 1749.5,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 1800,
+        "n": 4,
+        "median": 1862.5,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-07": {
+        "avg": 1687.5,
+        "n": 2,
+        "median": 1687.5,
+        "confidence": "Low"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1850,
+        "n": 1,
+        "median": 1850,
+        "confidence": "Low"
+      },
+      "2025-03": {
+        "avg": 1787.5,
+        "n": 4,
+        "median": 1827.5,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 1803,
+        "n": 5,
+        "median": 1895,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 1903,
+        "n": 2,
+        "median": 1903,
+        "confidence": "Low"
+      },
+      "2025-06": {
+        "avg": 2008.33,
+        "n": 3,
+        "median": 1995,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 1866.33,
+        "n": 3,
+        "median": 1899,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 1789.25,
+        "n": 4,
+        "median": 1818.5,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 1794.6,
+        "n": 5,
+        "median": 1749,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 1561,
+        "n": 4,
+        "median": 1647,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 1630.75,
+        "n": 4,
+        "median": 1674,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 1742.33,
+        "n": 3,
+        "median": 1679,
+        "confidence": "Medium"
+      }
+    },
+    "Esq/Vic-W-1 Bd": {
+      "2026-01": {
+        "avg": 2061,
+        "n": 5,
+        "median": 2062,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 1944.71,
+        "n": 7,
+        "median": 2062,
+        "confidence": "High"
+      },
+      "2026-03": {
+        "avg": 1982.25,
+        "n": 6,
+        "median": 1999.5,
+        "confidence": "High"
+      },
+      "2026-04": {
+        "avg": 1920.29,
+        "n": 7,
+        "median": 1950,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 2127.5,
+        "n": 6,
+        "median": 2069,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 1885.25,
+        "n": 8,
+        "median": 1876,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 2012.8,
+        "n": 5,
+        "median": 1975,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1973.14,
+        "n": 7,
+        "median": 1987,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 2273.8,
+        "n": 5,
+        "median": 2225,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 2128.11,
+        "n": 9,
+        "median": 2100,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2016,
+        "n": 8,
+        "median": 1996.5,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 1943.5,
+        "n": 8,
+        "median": 1945,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 1955.5,
+        "n": 6,
+        "median": 1880,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 1980.7,
+        "n": 10,
+        "median": 1912.5,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 1997.8,
+        "n": 5,
+        "median": 1899,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 1889,
+        "n": 6,
+        "median": 1822.5,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 1884.2,
+        "n": 5,
+        "median": 1880,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 2094.6,
+        "n": 5,
+        "median": 2145,
+        "confidence": "Medium"
+      }
+    },
+    "Esq/Vic-W-2 Bd": {
+      "2026-01": {
+        "avg": 2493.8,
+        "n": 5,
+        "median": 2499,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 2420.14,
+        "n": 7,
+        "median": 2499,
+        "confidence": "High"
+      },
+      "2026-03": {
+        "avg": 2586.2,
+        "n": 5,
+        "median": 2651,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 2485.57,
+        "n": 7,
+        "median": 2435,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 2565.44,
+        "n": 9,
+        "median": 2449,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 2488,
+        "n": 6,
+        "median": 2451.5,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 2400,
+        "n": 4,
+        "median": 2362.5,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 2603.74,
+        "n": 9,
+        "median": 2600,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 2609.8,
+        "n": 5,
+        "median": 2575,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 2813.43,
+        "n": 7,
+        "median": 2625,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2630,
+        "n": 6,
+        "median": 2607.5,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 2632.5,
+        "n": 8,
+        "median": 2622.5,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 2652.5,
+        "n": 2,
+        "median": 2652.5,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": 2479.38,
+        "n": 8,
+        "median": 2450,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 2531.6,
+        "n": 5,
+        "median": 2349,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 2330.67,
+        "n": 6,
+        "median": 2225,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 2463.14,
+        "n": 7,
+        "median": 2599,
+        "confidence": "High"
+      },
+      "2025-12": {
+        "avg": 2249.8,
+        "n": 5,
+        "median": 2325,
+        "confidence": "Medium"
+      }
+    },
+    "Esq/Vic-W-3 Bd": {
+      "2026-01": {
+        "avg": 3352,
+        "n": 4,
+        "median": 3354,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 3371.25,
+        "n": 4,
+        "median": 3354,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 3756,
+        "n": 4,
+        "median": 3675,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 3286.25,
+        "n": 4,
+        "median": 3350,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 3227,
+        "n": 5,
+        "median": 3200,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": 3152.5,
+        "n": 6,
+        "median": 3175,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 3202.8,
+        "n": 5,
+        "median": 3150,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 3194,
+        "n": 5,
+        "median": 3000,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 3375,
+        "n": 2,
+        "median": 3375,
+        "confidence": "Low"
+      },
+      "2025-04": {
+        "avg": 3500,
+        "n": 1,
+        "median": 3500,
+        "confidence": "Low"
+      },
+      "2025-05": {
+        "avg": 2299,
+        "n": 1,
+        "median": 2299,
+        "confidence": "Low"
+      },
+      "2025-06": {
+        "avg": 3616.67,
+        "n": 3,
+        "median": 3650,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 3500,
+        "n": 1,
+        "median": 3500,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": 3221,
+        "n": 2,
+        "median": 3221,
+        "confidence": "Low"
+      },
+      "2025-09": {
+        "avg": 3343,
+        "n": 5,
+        "median": 3300,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 2962.5,
+        "n": 4,
+        "median": 3175,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 3150,
+        "n": 4,
+        "median": 2975,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 3278.33,
+        "n": 3,
+        "median": 3200,
+        "confidence": "Medium"
+      }
+    },
+    "Esq/Vic-W-Houses": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 3650,
+        "n": 1,
+        "median": 3650,
+        "confidence": "Low"
+      },
+      "2025-03": {
+        "avg": 3500,
+        "n": 1,
+        "median": 3500,
+        "confidence": "Low"
+      },
+      "2025-04": {
+        "avg": 2762.5,
+        "n": 4,
+        "median": 2475,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 2725,
+        "n": 3,
+        "median": 2900,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 4500,
+        "n": 1,
+        "median": 4500,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": 4000,
+        "n": 1,
+        "median": 4000,
+        "confidence": "Low"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Lan/Col/VR-Studio": {
+      "2026-01": {
+        "avg": 1712.33,
+        "n": 3,
+        "median": 1768,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 1703,
+        "n": 4,
+        "median": 1768,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 1751.2,
+        "n": 5,
+        "median": 1749,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 1729,
+        "n": 4,
+        "median": 1762.5,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 1740.2,
+        "n": 5,
+        "median": 1768,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": 1559.4,
+        "n": 5,
+        "median": 1649,
+        "confidence": "Medium"
+      },
+      "2026-07": {
+        "avg": 1694.5,
+        "n": 2,
+        "median": 1694.5,
+        "confidence": "Low"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1522.5,
+        "n": 2,
+        "median": 1522.5,
+        "confidence": "Low"
+      },
+      "2025-03": {
+        "avg": 1755.83,
+        "n": 6,
+        "median": 1782.5,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 1742.25,
+        "n": 4,
+        "median": 1787.5,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 1808.2,
+        "n": 5,
+        "median": 1800,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 1754.25,
+        "n": 4,
+        "median": 1720,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 1754.25,
+        "n": 4,
+        "median": 1720,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 1843.33,
+        "n": 3,
+        "median": 1800,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 1758.33,
+        "n": 3,
+        "median": 1749,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 1705.75,
+        "n": 4,
+        "median": 1687,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 1700,
+        "n": 3,
+        "median": 1725,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 1636.25,
+        "n": 4,
+        "median": 1712.5,
+        "confidence": "Medium"
+      }
+    },
+    "Lan/Col/VR-1 Bd": {
+      "2026-01": {
+        "avg": 1972.6,
+        "n": 5,
+        "median": 2014,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 1981.33,
+        "n": 6,
+        "median": 2014,
+        "confidence": "High"
+      },
+      "2026-03": {
+        "avg": 1997.6,
+        "n": 5,
+        "median": 1925,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 2053.4,
+        "n": 5,
+        "median": 1995,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 2050.17,
+        "n": 12,
+        "median": 1991.5,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 1978.76,
+        "n": 17,
+        "median": 1994,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 1869.67,
+        "n": 6,
+        "median": 1854.5,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1990,
+        "n": 4,
+        "median": 1947.5,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 2142.75,
+        "n": 4,
+        "median": 2119,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 2037.33,
+        "n": 6,
+        "median": 2012.5,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 1953.9,
+        "n": 10,
+        "median": 1987.5,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 1914.75,
+        "n": 8,
+        "median": 1949.5,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 1914.75,
+        "n": 8,
+        "median": 1949.5,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 1960,
+        "n": 10,
+        "median": 1927.5,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 1952.2,
+        "n": 5,
+        "median": 1949,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 2045.29,
+        "n": 7,
+        "median": 2010,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 2073.43,
+        "n": 7,
+        "median": 2049,
+        "confidence": "High"
+      },
+      "2025-12": {
+        "avg": 1880.71,
+        "n": 7,
+        "median": 1925,
+        "confidence": "High"
+      }
+    },
+    "Lan/Col/VR-2 Bd": {
+      "2026-01": {
+        "avg": 2319.17,
+        "n": 6,
+        "median": 2425,
+        "confidence": "High"
+      },
+      "2026-02": {
+        "avg": 2334.33,
+        "n": 6,
+        "median": 2425,
+        "confidence": "High"
+      },
+      "2026-03": {
+        "avg": 2489.43,
+        "n": 7,
+        "median": 2449,
+        "confidence": "High"
+      },
+      "2026-04": {
+        "avg": 2624.11,
+        "n": 9,
+        "median": 2549,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 2453.08,
+        "n": 13,
+        "median": 2449,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 2581.79,
+        "n": 19,
+        "median": 2499,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 2442.22,
+        "n": 9,
+        "median": 2499,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 2567.5,
+        "n": 4,
+        "median": 2560,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 2713.6,
+        "n": 5,
+        "median": 2649,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 2447.86,
+        "n": 7,
+        "median": 2530,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2387,
+        "n": 10,
+        "median": 2382.5,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 2606.1,
+        "n": 10,
+        "median": 2600,
+        "confidence": "High"
+      },
+      "2025-07": {
+        "avg": 2606.1,
+        "n": 10,
+        "median": 2600,
+        "confidence": "High"
+      },
+      "2025-08": {
+        "avg": 2447.22,
+        "n": 9,
+        "median": 2500,
+        "confidence": "High"
+      },
+      "2025-09": {
+        "avg": 2516.33,
+        "n": 6,
+        "median": 2562.5,
+        "confidence": "High"
+      },
+      "2025-10": {
+        "avg": 2573.2,
+        "n": 10,
+        "median": 2624.5,
+        "confidence": "High"
+      },
+      "2025-11": {
+        "avg": 2508,
+        "n": 6,
+        "median": 2562,
+        "confidence": "High"
+      },
+      "2025-12": {
+        "avg": 2485.62,
+        "n": 8,
+        "median": 2502.5,
+        "confidence": "High"
+      }
+    },
+    "Lan/Col/VR-3 Bd": {
+      "2026-01": {
+        "avg": 3047,
+        "n": 4,
+        "median": 3022,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 3244,
+        "n": 4,
+        "median": 3022,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 3059.8,
+        "n": 5,
+        "median": 3025,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 3138.25,
+        "n": 4,
+        "median": 3132,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 2948.75,
+        "n": 4,
+        "median": 2850,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": 3021.33,
+        "n": 3,
+        "median": 3100,
+        "confidence": "Medium"
+      },
+      "2026-07": {
+        "avg": 2896,
+        "n": 4,
+        "median": 2895,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 4650,
+        "n": 2,
+        "median": 4650,
+        "confidence": "Low"
+      },
+      "2025-03": {
+        "avg": 2940,
+        "n": 3,
+        "median": 2995,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 3154.8,
+        "n": 5,
+        "median": 3100,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 3415,
+        "n": 3,
+        "median": 3495,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 3259,
+        "n": 5,
+        "median": 3250,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 3259,
+        "n": 5,
+        "median": 3250,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 2897.5,
+        "n": 2,
+        "median": 2897.5,
+        "confidence": "Low"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": 3200,
+        "n": 3,
+        "median": 3100,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 3237.5,
+        "n": 4,
+        "median": 3212.5,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 2907.4,
+        "n": 5,
+        "median": 2940,
+        "confidence": "Medium"
+      }
+    },
+    "Lan/Col/VR-Houses": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": 4025,
+        "n": 2,
+        "median": 4025,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 3887.5,
+        "n": 4,
+        "median": 3775,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 4644.38,
+        "n": 8,
+        "median": 4840,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 4379.17,
+        "n": 6,
+        "median": 4500,
+        "confidence": "High"
+      },
+      "2025-04": {
+        "avg": 3125,
+        "n": 4,
+        "median": 3150,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 3775,
+        "n": 4,
+        "median": 3700,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": 3215,
+        "n": 3,
+        "median": 3400,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 2733.33,
+        "n": 3,
+        "median": 2700,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": 3475,
+        "n": 2,
+        "median": 3475,
+        "confidence": "Low"
+      }
+    },
+    "Sk-Studio": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-07": {
+        "avg": 1000,
+        "n": 1,
+        "median": 1000,
+        "confidence": "Low"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": 1300,
+        "n": 1,
+        "median": 1300,
+        "confidence": "Low"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Sk-1 Bd": {
+      "2026-01": {
+        "avg": 1500,
+        "n": 1,
+        "median": 1500,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": 1500,
+        "n": 2,
+        "median": 1500,
+        "confidence": "Low"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": 1700,
+        "n": 1,
+        "median": 1700,
+        "confidence": "Low"
+      },
+      "2026-05": {
+        "avg": 1500,
+        "n": 1,
+        "median": 1500,
+        "confidence": "Low"
+      },
+      "2026-06": {
+        "avg": 1500,
+        "n": 1,
+        "median": 1500,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1783,
+        "n": 5,
+        "median": 1790,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 1720,
+        "n": 2,
+        "median": 1720,
+        "confidence": "Low"
+      },
+      "2025-04": {
+        "avg": 1790,
+        "n": 1,
+        "median": 1790,
+        "confidence": "Low"
+      },
+      "2025-05": {
+        "avg": 1787.5,
+        "n": 4,
+        "median": 1675,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 1866.67,
+        "n": 3,
+        "median": 1900,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 1866.67,
+        "n": 3,
+        "median": 1900,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 1830,
+        "n": 3,
+        "median": 1790,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 1925,
+        "n": 2,
+        "median": 1925,
+        "confidence": "Low"
+      },
+      "2025-10": {
+        "avg": 1747.5,
+        "n": 2,
+        "median": 1747.5,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": 1725,
+        "n": 1,
+        "median": 1725,
+        "confidence": "Low"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Sk-2 Bd": {
+      "2026-01": {
+        "avg": 1675,
+        "n": 2,
+        "median": 1675,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": 2125,
+        "n": 2,
+        "median": 1675,
+        "confidence": "Low"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": 2095,
+        "n": 2,
+        "median": 2095,
+        "confidence": "Low"
+      },
+      "2026-05": {
+        "avg": 2000,
+        "n": 1,
+        "median": 2000,
+        "confidence": "Low"
+      },
+      "2026-06": {
+        "avg": 2000,
+        "n": 1,
+        "median": 2000,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 2000,
+        "n": 1,
+        "median": 2000,
+        "confidence": "Low"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 2280.83,
+        "n": 6,
+        "median": 2195,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 1997.5,
+        "n": 4,
+        "median": 1975,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 2062.5,
+        "n": 4,
+        "median": 1875,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": 2512.5,
+        "n": 4,
+        "median": 2550,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 2350,
+        "n": 2,
+        "median": 2350,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": 2350,
+        "n": 2,
+        "median": 2350,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": 2420,
+        "n": 4,
+        "median": 2295,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": 1700,
+        "n": 1,
+        "median": 1700,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": 2000,
+        "n": 4,
+        "median": 1775,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 1916.67,
+        "n": 3,
+        "median": 1750,
+        "confidence": "Medium"
+      }
+    },
+    "Sk-3 Bd": {
+      "2026-01": {
+        "avg": 2800,
+        "n": 1,
+        "median": 2800,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": null,
+        "n": 0,
+        "median": 2800,
+        "confidence": "Estimated"
+      },
+      "2026-03": {
+        "avg": 2900,
+        "n": 2,
+        "median": 2900,
+        "confidence": "Low"
+      },
+      "2026-04": {
+        "avg": 2900,
+        "n": 2,
+        "median": 2900,
+        "confidence": "Low"
+      },
+      "2026-05": {
+        "avg": 3100,
+        "n": 1,
+        "median": 3100,
+        "confidence": "Low"
+      },
+      "2026-06": {
+        "avg": 3100,
+        "n": 1,
+        "median": 3100,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 2750,
+        "n": 2,
+        "median": 2750,
+        "confidence": "Low"
+      },
+      "2025-03": {
+        "avg": 2700,
+        "n": 1,
+        "median": 2700,
+        "confidence": "Low"
+      },
+      "2025-04": {
+        "avg": 2600,
+        "n": 1,
+        "median": 2600,
+        "confidence": "Low"
+      },
+      "2025-05": {
+        "avg": 3200,
+        "n": 1,
+        "median": 3200,
+        "confidence": "Low"
+      },
+      "2025-06": {
+        "avg": 3100,
+        "n": 1,
+        "median": 3100,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": 3100,
+        "n": 1,
+        "median": 3100,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": 3300,
+        "n": 3,
+        "median": 3300,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 3100,
+        "n": 1,
+        "median": 3100,
+        "confidence": "Low"
+      },
+      "2025-10": {
+        "avg": 2800,
+        "n": 1,
+        "median": 2800,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": 2600,
+        "n": 2,
+        "median": 2600,
+        "confidence": "Low"
+      },
+      "2025-12": {
+        "avg": 2450,
+        "n": 1,
+        "median": 2450,
+        "confidence": "Low"
+      }
+    },
+    "Sk-Houses": {
+      "2026-01": {
+        "avg": 3100,
+        "n": 1,
+        "median": 3100,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": null,
+        "n": 0,
+        "median": 3100,
+        "confidence": "Estimated"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": 2500,
+        "n": 1,
+        "median": 2500,
+        "confidence": "Low"
+      },
+      "2026-06": {
+        "avg": 2500,
+        "n": 1,
+        "median": 2500,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 3162.25,
+        "n": 4,
+        "median": 3274.5,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 3157.14,
+        "n": 7,
+        "median": 3000,
+        "confidence": "High"
+      },
+      "2025-03": {
+        "avg": 3100,
+        "n": 3,
+        "median": 3100,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 2450,
+        "n": 6,
+        "median": 2700,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2516.67,
+        "n": 3,
+        "median": 2400,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 3950,
+        "n": 1,
+        "median": 3950,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": 3950,
+        "n": 1,
+        "median": 3950,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": 1987.5,
+        "n": 4,
+        "median": 1900,
+        "confidence": "Medium"
+      },
+      "2025-10": {
+        "avg": 2722.5,
+        "n": 2,
+        "median": 2722.5,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": 2750,
+        "n": 1,
+        "median": 2750,
+        "confidence": "Low"
+      }
+    },
+    "Dun-Studio": {
+      "2026-01": {
+        "avg": 1100,
+        "n": 1,
+        "median": 1100,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": 1325,
+        "n": 2,
+        "median": 1100,
+        "confidence": "Low"
+      },
+      "2026-03": {
+        "avg": 1500,
+        "n": 1,
+        "median": 1500,
+        "confidence": "Low"
+      },
+      "2026-04": {
+        "avg": 1500,
+        "n": 1,
+        "median": 1500,
+        "confidence": "Low"
+      },
+      "2026-05": {
+        "avg": 1300,
+        "n": 2,
+        "median": 1300,
+        "confidence": "Low"
+      },
+      "2026-06": {
+        "avg": 1100,
+        "n": 1,
+        "median": 1100,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 1275,
+        "n": 2,
+        "median": 1275,
+        "confidence": "Low"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Dun-1 Bd": {
+      "2026-01": {
+        "avg": 1512.5,
+        "n": 2,
+        "median": 1512.5,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": 1715.33,
+        "n": 3,
+        "median": 1512.5,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 1966.6,
+        "n": 5,
+        "median": 1795,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 1865.43,
+        "n": 7,
+        "median": 1748,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": 1860,
+        "n": 6,
+        "median": 1747.5,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 1852.5,
+        "n": 6,
+        "median": 1737.5,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 1742.75,
+        "n": 12,
+        "median": 1690,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1795,
+        "n": 5,
+        "median": 1750,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 1855,
+        "n": 4,
+        "median": 1760,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 1637.25,
+        "n": 8,
+        "median": 1649,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 1671.43,
+        "n": 7,
+        "median": 1600,
+        "confidence": "High"
+      },
+      "2025-06": {
+        "avg": 1541.67,
+        "n": 3,
+        "median": 1695,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 1541.67,
+        "n": 3,
+        "median": 1695,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 1743.25,
+        "n": 4,
+        "median": 1739,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 1547.5,
+        "n": 2,
+        "median": 1547.5,
+        "confidence": "Low"
+      },
+      "2025-10": {
+        "avg": 1894,
+        "n": 3,
+        "median": 1698,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 1687,
+        "n": 4,
+        "median": 1624,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 1765.33,
+        "n": 3,
+        "median": 1748,
+        "confidence": "Medium"
+      }
+    },
+    "Dun-2 Bd": {
+      "2026-01": {
+        "avg": 1716.67,
+        "n": 3,
+        "median": 1700,
+        "confidence": "Medium"
+      },
+      "2026-02": {
+        "avg": 1989.2,
+        "n": 5,
+        "median": 1700,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 2048.2,
+        "n": 5,
+        "median": 2008,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 2066.2,
+        "n": 5,
+        "median": 2048,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 1937,
+        "n": 5,
+        "median": 1700,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": 1990.83,
+        "n": 6,
+        "median": 1950,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 2031.75,
+        "n": 12,
+        "median": 2002.5,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 1861.6,
+        "n": 5,
+        "median": 1988,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 2002.67,
+        "n": 3,
+        "median": 2000,
+        "confidence": "Medium"
+      },
+      "2025-04": {
+        "avg": 1975.17,
+        "n": 6,
+        "median": 2003,
+        "confidence": "High"
+      },
+      "2025-05": {
+        "avg": 2124.33,
+        "n": 3,
+        "median": 2078,
+        "confidence": "Medium"
+      },
+      "2025-06": {
+        "avg": 2103.75,
+        "n": 4,
+        "median": 2025,
+        "confidence": "Medium"
+      },
+      "2025-07": {
+        "avg": 2103.75,
+        "n": 4,
+        "median": 2025,
+        "confidence": "Medium"
+      },
+      "2025-08": {
+        "avg": 1981,
+        "n": 4,
+        "median": 2008,
+        "confidence": "Medium"
+      },
+      "2025-09": {
+        "avg": 2022.5,
+        "n": 2,
+        "median": 2022.5,
+        "confidence": "Low"
+      },
+      "2025-10": {
+        "avg": 2071,
+        "n": 5,
+        "median": 2048,
+        "confidence": "Medium"
+      },
+      "2025-11": {
+        "avg": 1926.5,
+        "n": 4,
+        "median": 1978,
+        "confidence": "Medium"
+      },
+      "2025-12": {
+        "avg": 1954.4,
+        "n": 5,
+        "median": 1968,
+        "confidence": "Medium"
+      }
+    },
+    "Dun-3 Bd": {
+      "2026-01": {
+        "avg": 2275,
+        "n": 2,
+        "median": 2275,
+        "confidence": "Low"
+      },
+      "2026-02": {
+        "avg": 2337,
+        "n": 4,
+        "median": 2275,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 2399.33,
+        "n": 3,
+        "median": 2400,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 2399.33,
+        "n": 3,
+        "median": 2400,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 2283.33,
+        "n": 3,
+        "median": 2400,
+        "confidence": "Medium"
+      },
+      "2026-06": {
+        "avg": 2400,
+        "n": 2,
+        "median": 2400,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 2348,
+        "n": 1,
+        "median": 2348,
+        "confidence": "Low"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 2348,
+        "n": 1,
+        "median": 2348,
+        "confidence": "Low"
+      },
+      "2025-03": {
+        "avg": 2574,
+        "n": 2,
+        "median": 2574,
+        "confidence": "Low"
+      },
+      "2025-04": {
+        "avg": 2550,
+        "n": 1,
+        "median": 2550,
+        "confidence": "Low"
+      },
+      "2025-05": {
+        "avg": 2525,
+        "n": 2,
+        "median": 2525,
+        "confidence": "Low"
+      },
+      "2025-06": {
+        "avg": 2700,
+        "n": 2,
+        "median": 2700,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": 2700,
+        "n": 2,
+        "median": 2700,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": 2434,
+        "n": 2,
+        "median": 2434,
+        "confidence": "Low"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": 2298,
+        "n": 1,
+        "median": 2298,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": 2298,
+        "n": 1,
+        "median": 2298,
+        "confidence": "Low"
+      },
+      "2025-12": {
+        "avg": 2298,
+        "n": 1,
+        "median": 2298,
+        "confidence": "Low"
+      }
+    },
+    "Dun-Houses": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-07": {
+        "avg": 3000,
+        "n": 4,
+        "median": 2900,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": 3110,
+        "n": 5,
+        "median": 2850,
+        "confidence": "Medium"
+      },
+      "2025-03": {
+        "avg": 3500,
+        "n": 1,
+        "median": 3500,
+        "confidence": "Low"
+      },
+      "2025-04": {
+        "avg": 2925,
+        "n": 4,
+        "median": 2800,
+        "confidence": "Medium"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": 3500,
+        "n": 1,
+        "median": 3500,
+        "confidence": "Low"
+      },
+      "2025-07": {
+        "avg": 3500,
+        "n": 1,
+        "median": 3500,
+        "confidence": "Low"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": 2700,
+        "n": 2,
+        "median": 2700,
+        "confidence": "Low"
+      },
+      "2025-10": {
+        "avg": 3200,
+        "n": 1,
+        "median": 3200,
+        "confidence": "Low"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Nan-Studio": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": 1808.25,
+        "n": 8,
+        "median": null,
+        "confidence": "High"
+      },
+      "2026-03": {
+        "avg": 1610.67,
+        "n": 3,
+        "median": 1595,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": 1605,
+        "n": 3,
+        "median": 1595,
+        "confidence": "Medium"
+      },
+      "2026-07": {
+        "avg": 1535.2,
+        "n": 5,
+        "median": 1535,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Nan-1 Bd": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": 2016.2,
+        "n": 5,
+        "median": null,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 1625.3,
+        "n": 5,
+        "median": 1600,
+        "confidence": "Medium"
+      },
+      "2026-04": {
+        "avg": 1717.5,
+        "n": 6,
+        "median": 1695,
+        "confidence": "High"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": 1873.33,
+        "n": 6,
+        "median": 1902.5,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 1865.56,
+        "n": 9,
+        "median": 1871,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Nan-2 Bd": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": 2342.5,
+        "n": 4,
+        "median": null,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 2208.06,
+        "n": 8,
+        "median": 2369.75,
+        "confidence": "High"
+      },
+      "2026-04": {
+        "avg": 2205,
+        "n": 5,
+        "median": 2150,
+        "confidence": "Medium"
+      },
+      "2026-05": {
+        "avg": 2117.5,
+        "n": 6,
+        "median": 2219.5,
+        "confidence": "High"
+      },
+      "2026-06": {
+        "avg": 2266.25,
+        "n": 8,
+        "median": 2172.5,
+        "confidence": "High"
+      },
+      "2026-07": {
+        "avg": 2270.12,
+        "n": 16,
+        "median": 2207,
+        "confidence": "High"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Nan-3 Bd": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": 2648.75,
+        "n": 4,
+        "median": null,
+        "confidence": "Medium"
+      },
+      "2026-03": {
+        "avg": 2925,
+        "n": 2,
+        "median": 2925,
+        "confidence": "Low"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": 2874.5,
+        "n": 2,
+        "median": 2874.5,
+        "confidence": "Low"
+      },
+      "2026-07": {
+        "avg": 2533,
+        "n": 3,
+        "median": 2299,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    },
+    "Nan-Houses": {
+      "2026-01": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-02": {
+        "avg": 1825,
+        "n": 1,
+        "median": null,
+        "confidence": "Low"
+      },
+      "2026-03": {
+        "avg": 3000,
+        "n": 1,
+        "median": 3000,
+        "confidence": "Low"
+      },
+      "2026-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-07": {
+        "avg": 3150,
+        "n": 3,
+        "median": 2850,
+        "confidence": "Medium"
+      },
+      "2026-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2026-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-02": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-03": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-04": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-05": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-06": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-07": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-08": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-09": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-10": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-11": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      },
+      "2025-12": {
+        "avg": null,
+        "n": 0,
+        "median": null,
+        "confidence": "Estimated"
+      }
+    }
   }
- }
 }
